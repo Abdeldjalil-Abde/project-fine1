@@ -1,0 +1,398 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-image: url(../imaj/277691959_3012909362305554_9162559267468101750_n.png);
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  width: 100vw;
+  height: 15%;
+  background-color: rgb(80, 71, 71, 0.5);
+  position: relative;
+}
+
+.logo img {
+  width: 33.5%;
+  margin: 0% 0% 0% 53%;
+}
+
+.list {
+  top: 25%;
+  width: 35%;
+  position: absolute;
+  right: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list a {
+  text-decoration: none;
+  font-size: 140%;
+  padding: 10px 10px;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+  margin-right: 5%;
+}
+
+.list a:hover {
+  color: rgb(75, 43, 219);
+}
+
+.list img {
+  width: 13%;
+  border-radius: 50%;
+  margin-right: 2%;
+  border: 2px rgb(57, 16, 240) solid ;
+
+}
+
+.list samp {
+  color: rgb(57, 16, 240);
+  margin-right: 2.5%;
+  font-size: 170%;
+}
+
+main {
+  width: 100vw;
+  height: 170vh;
+  background-color:#78bd5d ;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+main img {
+  margin-top: 10.3%;
+  width: 12%;
+  border-radius: 100%;
+  z-index: 3;
+  border: 2px rgb(57, 16, 240) solid ;
+}
+
+.overflow {
+  width: 100vw;
+  height: 170vh;
+  overflow: hidden;
+  position: absolute;
+}
+
+.cercle {
+  width: 1900px;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  border: 2px #111 solid;
+  border-color: #111 #111 transparent transparent;
+  transform: rotate(-45deg);
+  background-color:#c9eb08;
+  top:13%;
+  left: -20%;
+  position: absolute;
+  z-index: 3;
+}
+form{
+  top: 33%;
+  left: 53%;
+  width: 45%;
+  z-index: 3;
+  position: absolute;
+}
+
+form div, .infStudent div {
+  margin: 0px 0px 8.5%;
+  text-shadow: 3px 7px 5px #111;
+  z-index: 3;
+}
+
+form div span, .infStudent div span {
+  font-size: 30px;
+  color: #111;
+  margin-right: 10%;
+  z-index: 4;
+}
+form div .info,.infStudent div .info{
+  font-size: 30px;
+  color:rgb(97, 95, 93);
+  margin-right: 2%;
+  z-index: 4;
+}
+button{
+  width: 20%;
+  margin-right: 10%;
+  font-size: 20px;
+  background: linear-gradient(90deg, #4482ac, #498f8f, #55e7fc);
+  border-radius: 40px;
+  color: black;
+  font-weight: 500;
+}
+.students{
+  width: 30%;
+  height: 15%;
+  position: absolute;
+  background-color: rgba(247, 34, 34, 0.4);
+  border: 2px #111 solid;
+  border-radius: 20% 20% 12% 12%;
+  top: 35%;
+  right: 53%;
+  z-index: 3;
+}
+.numberStudent{
+  font-size: 25px;
+  margin-top: 7%;
+  margin-right: 10%;
+}
+.students button{
+  width: 35%;
+  font-size: 25px;
+  margin-top: 9%;
+  margin-right: 30%;
+  background: linear-gradient(90deg, #4482ac, #498f8f, #55e7fc);
+  border-radius: 40px;
+  color: black;
+  font-weight: 500;
+}
+.submodel span{
+   margin-right: 10%;
+}
+.student{
+  font-size: 30px;
+  width: 25%;
+  height: 12%;
+  z-index: 2;
+  position: absolute;
+  top:-15%;
+  right: 35%;
+
+}
+.students .student::before{
+  content: "";
+  width: 100%;
+  height: 10%;
+  background-color:#c9eb08;
+  right: -15%;
+  top:115%;
+  z-index: -1;
+  position: absolute;
+}
+.searchs{
+  width: 30%;
+  aspect-ratio: 1;
+  position: absolute;
+  border: 2px #111 solid;
+  background-color: rgba(247, 34, 34, 0.4);
+  border-radius: 20% 20% 12% 12%;
+  top: 55%;
+  right: 53%;
+  z-index: 3;
+}
+.f{
+  width: 100%;
+  aspect-ratio: 1;
+  position: absolute;
+  border-radius: 20%;
+  overflow: hidden;
+}
+.search{
+  font-size: 30px;
+  width: 25%;
+  height: 12%;
+  z-index: 2;
+  position: absolute;
+  top:-5.5%;
+  right: 40%;
+}
+.searchs .search::before{
+  content: "";
+  width: 100%;
+  height: 10%;
+  background-color:#c9eb08;
+
+  right: -15%;
+  top:40%;
+  z-index: -1;
+  position: absolute;
+}
+.form {
+  width: 120%;
+  margin-top: -33%;
+  margin-left: -60%;
+  padding-bottom: 4%;
+  background-color: rgb(243, 218, 187 ,0.6);
+  border-radius: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+}
+.form div span {
+  font-size: 20px;
+  color: #111;
+  margin-right: 5%;
+  z-index: 4;
+}
+.form div {
+  margin: 0px 0px 47px;
+  text-shadow: 3px 7px 5px #111;
+  z-index: 3;
+}
+.form div {
+  width: 75%;
+  height: 60px;
+  margin: 3% 0%;
+  position: relative;
+  overflow: hidden;
+}
+.form div input {
+  width: 100%;
+  height: 100%;
+  padding-top: 3%;
+  font-size: 125%;
+  padding-right: 2%;
+  background: none;
+  border: none;
+  color: #000;
+  outline: thin;
+}
+.form div label {
+  width: 100%;
+  height: 100%;
+  font-size: 125%;
+  color: #000;
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  pointer-events: none;
+  border-bottom: 3px solid rgb(12, 66, 167);
+}
+
+.form div label::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+  bottom: -5%;
+  border-bottom: 3px solid rgb(0, 250, 60);
+  transform: translate(-100%);
+  transition: 0.6s ease;
+}
+
+.txt {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  transition:  1s ease;
+}
+
+.form div input:focus ~ .lable .txt,
+.form div input:valid ~ .lable .txt {
+  transform: translateY(-160%);
+  font-size: 90%;
+  color: blue;
+}
+
+.form div input:focus + .lable::after,
+.form div input:valid + .lable::after {
+  transform: translateX(0%);
+}
+
+.submit {
+  width: 25%;
+  height: 60%;
+  margin-top: 30px;
+  margin-left: 30px;
+  border-radius: 40px;
+  background: linear-gradient(90deg, #4482ac, #498f8f, #55e7fc);
+  color: black;
+  font-size: 25px;
+  font-weight: 500;
+}
+.infStudent{
+  margin-top: 50%;
+}
+.infStudent .center{
+  margin-bottom: 15%;
+  margin-right: 35%;
+  font-size: 40px;
+}
+form .error{
+  color: #df0505;
+  font-size: 20px;
+  z-index: 4;
+  
+}
+
+footer {
+  width: 100%;
+  height: 150px;
+  position: relative;
+}
+
+footer a {
+  position: absolute;
+  left: 5px;
+  height: 50px;
+  text-decoration: none;
+  color: #111;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+footer a:hover {
+  color: red;
+}
+
+footer a img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  float: left;
+}
+
+footer a p {
+  float: left;
+  margin-left: 10px;
+  font-family: sans-serif;
+  line-height: 40px;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+footer .link-face {
+  top: 25px;
+}
+
+footer .link-mail {
+  top: 85px;
+}
+
+footer span {
+  position: absolute;
+  left: 250px;
+
+  font-family: sans-serif;
+  line-height: 40px;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+footer .phon-or {
+  top: 25px;
+}
+
+footer .phon-mo {
+  top: 60px;
+}
+
+footer .phon-dj {
+  top: 95px;
+}

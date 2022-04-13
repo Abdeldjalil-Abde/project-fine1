@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  header {
+     background-image: url(../imaj/277691959_3012909362305554_9162559267468101750_n.png); 
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .container {
+    display: flex;
+    width: 100vw;
+    height: 15%;
+    background-color: rgb(80, 71, 71, 0.5);
+    position: relative;
+  }
+  .list {
+    top: 25%;
+    position: absolute;
+    right: 10%;
+  }
+  .list a {
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 10px;
+    text-transform: uppercase;
+    color: rgb(0, 0, 0);
+  }
+  
+  .list a:hover {
+    color: rgb(75, 43, 219);
+  }
+  .logo img {
+    width: 27%;
+    margin: 0% 0% 0% 55%;
+  }
+  
+  main {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+  }
+  .wraper h2 {
+    margin-top: -40px;
+    margin-right: 125px;
+    font-size: 65px;
+    text-align: center;
+    font-family: cursive;
+    color: rgb(0, 0, 250);
+  }
+  
+  .wraper p {
+    font-size: 45px;
+    text-align: center;
+    font-family: unset;
+    color: wheat;
+    text-shadow: 3px 2px 8px #111;
+  }
+  
+  .wraper .inf {
+    width: 30%;
+    height: 360px;
+    margin: 20px auto;
+    padding: 5px 15px;
+    border: 3px solid #111;
+    background-color: rgb(0, 0, 0, 0.222);
+  }
+  
+  .wraper .inf div {
+    margin: 0px 0px 47px;
+    text-shadow: 3px 7px 5px #111;
+  }
+  
+  .wraper .inf div span {
+    float: left;
+    font-size: 30px;
+    color: whitesmoke;
+  }
+  
+  .wraper .inf div p {
+    float: left;
+    margin-left: 10px;
+    font-size: 30px;
+    color: whitesmoke;
+  }
+  footer {
+    width: 100%;
+    height: 150px;
+    position: relative;
+  }
+  
+  footer a {
+    position: absolute;
+    left: 5px;
+  
+    height: 50px;
+    text-decoration: none;
+    color: #111;
+    font-size: 25px;
+    font-weight: 900;
+  }
+  
+  footer a:hover {
+    color: red;
+  }
+  
+  footer a img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    float: left;
+  }
+  
+  footer a p {
+    float: left;
+    margin-left: 10px;
+  
+    font-family: sans-serif;
+    line-height: 40px;
+    font-size: 25px;
+    font-weight: 900;
+  }
+  
+  footer .link-face {
+    top: 25px;
+  }
+  
+  footer .link-mail {
+    top: 85px;
+  }
+  
+  footer span {
+    position: absolute;
+    left: 250px;
+  
+    font-family: sans-serif;
+    line-height: 40px;
+    font-size: 25px;
+    font-weight: 900;
+  }
+  
+  footer .phon-or {
+    top: 25px;
+  }
+  
+  footer .phon-mo {
+    top: 60px;
+  }
+  
+  footer .phon-dj {
+    top: 95px;
+  }
+  

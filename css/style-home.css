@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-image: url(../imaj/277691959_3012909362305554_9162559267468101750_n.png);
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+}
+.container {
+  display: flex;
+  width: 100vw;
+  height: 15%;
+  background-color: rgb(80, 71, 71, 0.5);
+  position: relative;
+}
+.list {
+  top: 25%;
+  position: absolute;
+  right: 10%;
+}
+.list a {
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 10px;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+}
+
+.list a:hover {
+  color: rgb(75, 43, 219);
+}
+.logo img {
+  width: 33.5%;
+  margin: 0% 0% 0% 53%;
+}
+.teterHeder {
+  width: 100vw;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.Register {
+  margin-top: 3%;
+  width: 470px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid #000;
+  border-radius: 35%;
+  padding: 10px 0px 0px 0px;
+  background: green;
+  font-size: 35px;
+  color: rgb(187, 22, 22);
+}
+.Register a {
+  text-decoration: none;
+}
+h1 {
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-size: 60px;
+  margin-top: 2%;
+  color: #000;
+}
+.introdtion {
+  text-transform: uppercase;
+  font-family: system-ui;
+  font-size: 40px;
+  text-shadow: 1px 1px red;
+  margin-top: 2%;
+  color: rgb(0, 0, 0);
+}
+.introdtion1 {
+  text-transform: uppercase;
+  font-family: system-ui;
+  font-size: 35px;
+  text-shadow: 1px 1px red;
+  margin-top: 2%;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+.modle1 {
+  margin-top: 4%;
+  height: 90px;
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn1 {
+  height: 25%;
+  width: 210px;
+  border: 1px solid #000;
+  border-radius: 15px;
+  font-size: 20px;
+  color: #000;
+  background-color: rgb(11, 167, 214, 0.7);
+  border-radius: 25%;
+}
+
+.modle1 a {
+  text-decoration: none;
+  font-size: 20px;
+  padding: 5px 0 0 0;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+.modle1 a:hover {
+  color: rgb(75, 43, 219);
+}
+footer {
+  width: 100%;
+  height: 150px;
+  position: relative;
+}
+
+footer a {
+  position: absolute;
+  left: 5px;
+
+  height: 50px;
+  text-decoration: none;
+  color: #111;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+footer a:hover {
+  color: red;
+}
+
+footer a img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  float: left;
+}
+
+footer a p {
+  float: left;
+  margin-left: 10px;
+
+  font-family: sans-serif;
+  line-height: 40px;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+footer .link-face {
+  top: 25px;
+}
+
+footer .link-mail {
+  top: 85px;
+}
+
+footer span {
+  position: absolute;
+  left: 250px;
+
+  font-family: sans-serif;
+  line-height: 40px;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+footer .phon-or {
+  top: 25px;
+}
+
+footer .phon-mo {
+  top: 60px;
+}
+
+footer .phon-dj {
+  top: 95px;
+}
+
+
