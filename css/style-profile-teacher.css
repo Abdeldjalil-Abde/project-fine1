@@ -108,7 +108,7 @@ form{
 }
 
 form div, .infStudent div {
-  margin: 0px 0px 8.5%;
+  margin: 0% 0% 8.5%;
   text-shadow: 3px 7px 5px #111;
   z-index: 3;
 }
@@ -134,6 +134,26 @@ button{
   color: black;
   font-weight: 500;
 }
+
+.chang {
+  width: 35%;
+  padding: 0.5% 2% 0.5% 2% ;
+  border-radius: 30px;
+  border: 2px #000 solid;
+  border-color: rgb(119, 118, 118) rgb(37, 34, 34) rgb(37, 34, 34) rgb(119, 118, 118) ;
+  background: linear-gradient(90deg, #4482ac, #498f8f, #55e7fc);
+  font-size: 25px;
+  text-decoration: none;
+  font-family: -webkit-body;
+  text-align: center;
+  color: #000;
+  margin-right: 10%;
+  cursor: context-menu;
+}
+.chang:active{
+  border-color: rgb(37, 34, 34) rgb(119, 118, 118) rgb(119, 118, 118) rgb(37, 34, 34);
+
+}
 .students{
   width: 30%;
   height: 15%;
@@ -145,20 +165,16 @@ button{
   right: 53%;
   z-index: 3;
 }
+ .students .chang{
+  position: absolute;
+  bottom: 27%;
+  text-align: center;
+  right: 18%;
+}
 .numberStudent{
   font-size: 25px;
   margin-top: 7%;
   margin-right: 10%;
-}
-.students button{
-  width: 35%;
-  font-size: 25px;
-  margin-top: 9%;
-  margin-right: 30%;
-  background: linear-gradient(90deg, #4482ac, #498f8f, #55e7fc);
-  border-radius: 40px;
-  color: black;
-  font-weight: 500;
 }
 .submodel span{
    margin-right: 10%;

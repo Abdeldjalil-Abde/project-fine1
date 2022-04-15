@@ -21,7 +21,35 @@
         <img src="../imaj/images.png" alt="">
       </div>
     </div>
-
+      <?php
+          function number_column($id){
+            require '../function/databaes-connect.php';
+            if($id=='1'){
+              $teble = 'teacher1';
+            }else if($id=='2'){
+              $teble = 'teacher2';
+            }else if($id=='3'){
+              $teble = 'teacher3';
+            }else if($id=='4'){
+              $teble = 'teacher4';
+            }
+            $sql = "SELECT * FROM $teble";
+            $stmt = mysqli_stmt_init($conn);
+            if (mysqli_stmt_prepare($stmt, $sql)) {
+                mysqli_stmt_execute($stmt);
+        
+                $result = mysqli_stmt_get_result($stmt);
+                mysqli_stmt_store_result($stmt);
+           
+                    $number_rows = mysqli_num_rows($result);
+                    return $number_rows;
+                }
+             else {
+                 header("Location: ../sigin.php?error=sql1&way=" . $submit);
+                 exit();
+            }
+        }
+      ?>
     <div class="overflow">
       <div class="cercle"></div>
     </div>
@@ -61,15 +89,15 @@
         <div>
           <span>كلمة السر : </span>
           <?php echo "<span class='info'>" . $_GET['pwd'] . "</span>"; ?>
-          <button> تغير كلمة السر </button>
+          <a class="chang" href="change-mot-de-passe.php"> تغير كلمة السر </a>
         </div>
       </form>
       <div class="students">
         <div class="student"> الطلاب </div>
         <div class="numberStudent"> عدد الطلاب في المادة :
-          <span> 25 </span>
+          <span> <?php echo number_column($_GET['id']); ?> </span>
         </div>
-        <button> قائمة الطلاب </button>
+        <a  class="chang" href="liste-student.php?id=<?php echo $_GET['id'] ?>"> قائمة الطلاب </a>
       </div>
 
       <div class="searchs">

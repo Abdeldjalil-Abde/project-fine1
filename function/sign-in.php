@@ -12,18 +12,24 @@ function serch($class, $mail, $pwd) {
 
         if (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_assoc($result);
-
             $first = $row['first_name'];
             $last = $row['last_name'];
             $gender = $row['gender'];
             $adrass = $row['adress'];
             $dat =  $row['dat'];
             $tel =  $row['tel'];
-            $id = $row['id_teacher'];
-            if($class="teacher"){
-            header("Location: ../html/profile-teacher.php?first_name=" . $first . "&last_name=" . $last . "&gender=" . $gender . "&adrass=" . $adrass . "&dat=" . $dat . "&tel=" . $tel . "&mail=" . $mail . "&pwd=" . $pwd . "&id=" . $id);
-            exit();
+            if($class=='admin'){
+                $id = $row['id'];
+                header("Location: ../html/profile-admin.php?first_name=" . $first . "&last_name=" . $last . "&mail=" . $mail . "&pwd=" . $pwd . "&id=" .$id);
+                  exit();
+
+            }else if($class=="teacher"){
+
+                $id = $row['id'];
+                header("Location: ../html/profile-teacher.php?first_name=" . $first . "&last_name=" . $last . "&gender=" . $gender . "&adrass=" . $adrass . "&dat=" . $dat . "&tel=" . $tel . "&mail=" . $mail . "&pwd=" . $pwd . "&id=" . $id);
+                exit();
             }else{
+
                 header("Location: ../html/profile-student.php?first_name=" . $first . "&last_name=" . $last . "&gender=" . $gender . "&adrass=" . $adrass . "&dat=" . $dat . "&tel=" . $tel . "&mail=" . $mail . "&pwd=" . $pwd);
                 exit();
             }
@@ -33,7 +39,7 @@ function serch($class, $mail, $pwd) {
         }
     } else {
         header("Location: ../sigin.php?error=sql1&way=" . $submit);
-        exit();
+         exit();
     }
 }
 
@@ -55,10 +61,13 @@ if (isset($_POST['submit'])) {
         } else if (serch("teacher3", $mail, $pwd)) {
         } else if (serch("teacher4", $mail, $pwd)) {
         } else if (serch("teacher", $mail, $pwd)) {
-        } else {
-            header("Location: ../sigin.php?error=not" );
-            exit();
-        }
+        } else if (serch("admin", $mail, $pwd)){
+        }else{
+                header("Location: ../sigin.php?error=not" );
+                 exit();
+            }
+             
+        
     }
 } else {
     header("Location: ../sigin.php");

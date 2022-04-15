@@ -116,6 +116,25 @@ form{
   right: 53%;
   z-index: 3;
 }
+.chang {
+  width: 35%;
+  padding: 0.5% 2% 0.5% 2% ;
+  border-radius: 30px;
+  border: 2px #000 solid;
+  border-color: rgb(119, 118, 118) rgb(37, 34, 34) rgb(37, 34, 34) rgb(119, 118, 118) ;
+  background: linear-gradient(90deg, #4482ac, #498f8f, #55e7fc);
+  font-size: 25px;
+  text-decoration: none;
+  font-family: -webkit-body;
+  text-align: center;
+  color: #000;
+  margin-right: 10%;
+  cursor: context-menu;
+}
+.chang:active{
+  border-color: rgb(37, 34, 34) rgb(119, 118, 118) rgb(119, 118, 118) rgb(37, 34, 34);
+
+}
 .submodel{
   font-size: 25px;
   margin-top: 7%;

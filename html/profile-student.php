@@ -58,7 +58,7 @@
                 <div>
                 <span>كلمة السر : </span>
                 <?php echo "<span class='info'>" . $_GET['pwd'] . "</span>"; ?>
-                    <button> تغير كلمة السر </button>
+                <a class="chang" href="change-mot-de-passe.php"> تغير كلمة السر </a>
                 </div>
             </form>
             <div class="models">

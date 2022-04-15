@@ -7,10 +7,10 @@ if (isset($_POST['submit'])) {
         $sql="";
         
         $stmt = mysqli_stmt_init($conn);
-        $sql = "SELECT * FROM teacher   WHERE id_teacher = '$id';";
+        $sql = "SELECT * FROM teacher   WHERE id = ?;";
         if (mysqli_stmt_prepare($stmt, $sql)) {
+            mysqli_stmt_bind_param($stmt, "s", $id);
             mysqli_stmt_execute($stmt);
-    
             $result = mysqli_stmt_get_result($stmt);
             mysqli_stmt_store_result($stmt);
     
@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
                 $tel =  $row['tel'];
                 $mail = $row['mail'];
                 $pwd = $row['pwd'];
-                $id = $row['id_teacher'];
+                $id = $row['id'];
     
         } else {
             header("Location: ../html/profile-teacher.php?error=sql1&way=" . $submit);

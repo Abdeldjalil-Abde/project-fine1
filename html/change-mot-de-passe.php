@@ -4,25 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>تسجيل الدخول</title>
-    <link rel="stylesheet" href="css/style-sigin.css" />
+    <title>تغيير كلمة السر</title>
+    <link rel="stylesheet" href="../css/style-sigin.css" />
   </head>
   <body >
     <header>
       <div class="container">
         <div class="logo">
-          <img src="imaj/logo.png" alt="" />
+          <img src="../imaj/logo.png" alt="" />
           <div class="list">
-            <a href="sinup.php">تسجيل حساب جديد</a>
-            <a href="sigin.php">تسجيل الدخول</a>
-            <a href="index.php">الصفحة الرئيسية</a>
+            <a href="../sinup.php">تسجيل حساب جديد</a>
+            <a href="../sigin.php">تسجيل الدخول</a>
+            <a href="../index.php">الصفحة الرئيسية</a>
           </div>
         </div>
       </div>
       <main dir="rtl">
       
-          <form method="POST" action="function/sign-in.php">
-            <p class="msg">يرجى ملئ المعلومات لتسجيل الدخول</p>
+          <form method="POST" action="../function/changemet.php">
+            <p class="msg">يرجى ملئ المعلومات لتغيير كلمة السر </p>
             <?php
             if (isset($_GET['error'])) {
                     if ($_GET['error'] == "mail") {
@@ -55,12 +55,19 @@
             <div>
               <input type="password" name="pwd" required autocomplete="off" />
               <label class="lable" for="">
-                <span class="txt">كلمة السر</span>
+                <span class="txt">كلمة السر الحالية  </span>
               </label>
             </div>
-             <button class="submit" type="submit" name="submit">
+            <div>
+              <input type="password" name="nouveau_pwd" required autocomplete="off" />
+              <label class="lable" for="">
+                <span class="txt">كلمة السر الجديدة </span>
+              </label>
+            </div>
+             <button class="submit" name="submit" type="submit">
               submit
-              </button>
+              </button
+            >
           </form>
       </main>
     </header>
