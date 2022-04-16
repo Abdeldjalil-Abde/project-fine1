@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>تغيير كلمة السر</title>
+    <title>تغيير البريد الإلكتروني </title>
     <link rel="stylesheet" href="../css/style-sigin.css" />
   </head>
   <body >
@@ -22,7 +22,7 @@
       <main dir="rtl">
       
           <form method="POST" action="../function/changemet.php">
-            <p class="msg">يرجى ملئ المعلومات لتغيير كلمة السر </p>
+            <p class="msg">يرجى ملئ المعلومات لتغيير البريد الإلكتروني </p>
             <?php
             if (isset($_GET['error'])) {
                     if ($_GET['error'] == "mail") {
@@ -49,22 +49,29 @@
                     ?>
 
               <label class="lable" for="">
-                <span class="txt">البريد الألكتروني</span>
+                <span class="txt">البريد الألكتروني الحالي </span>
+              </label>
+            </div>
+            <div>
+            <?php
+                    if (isset($_GET['nuoveau_mail'])) {
+                        $nuoveau_mail = $_GET['nuoveau_mail'];
+                    } else {
+                        $nuoveau_mail = "";
+                    }
+                    echo '<input type="mail" name="nouveau_mail" required autocomplete="off" value="' . $nuoveau_mail . '">';
+                    ?>
+              <label class="lable" for="">
+                <span class="txt">البريد الإلكتروني  الجديد  </span>
               </label>
             </div>
             <div>
               <input type="password" name="pwd" required autocomplete="off" />
               <label class="lable" for="">
-                <span class="txt">كلمة السر الحالية  </span>
+                <span class="txt">كلمة السر  </span>
               </label>
             </div>
-            <div>
-              <input type="password" name="nouveau_pwd" required autocomplete="off" />
-              <label class="lable" for="">
-                <span class="txt">كلمة السر الجديدة </span>
-              </label>
-            </div>
-             <button class="submit" name="change-pwd" type="submit">
+             <button class="submit" name="change-mail" type="submit">
               submit
               </button
             >

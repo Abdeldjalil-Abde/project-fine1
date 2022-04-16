@@ -97,13 +97,13 @@
         <div class="numberStudent"> عدد الطلاب في المادة :
           <span> <?php echo number_column($_GET['id']); ?> </span>
         </div>
-        <a  class="chang" href="liste-student.php?id=<?php echo $_GET['id'] ?>"> قائمة الطلاب </a>
+        <a  class="chang" href="liste-student.php?id=<?php echo $_GET['id'] ?> &ferst_name=<?php echo $_GET['first_name'] ?>"> قائمة الطلاب </a>
       </div>
 
       <div class="searchs">
         <div class="search"> البحث </div>
         <div class="f">
-          <form class="form" action="../function/information-student.php" method="POST">
+          <form class="form" action="../function/information.php" method="POST">
 
             <div>
               <input class="input" type="mail" name="mail" required autocomplete="off" value="" />

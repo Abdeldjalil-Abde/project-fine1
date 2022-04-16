@@ -17,7 +17,7 @@
             </div>
             <div class="list">
                 <a href="../index.php">الصفحة الرئيسية</a>
-                <samp><?php echo $_GET['ferst_name']  ?> </samp>
+                <samp>حسنى </samp>
                 <img src="../imaj/images.png" alt="">
             </div>
         </div>
@@ -36,15 +36,9 @@
                 require "../function/databaes-connect.php";
 
                 $sql = "";
-                if ($_GET['id'] == "1") {
-                    $sql = "SELECT * FROM teacher1;";
-                } else if ($_GET['id'] == "2") {
-                    $sql = "SELECT * FROM teacher2;";
-                } else if ($_GET['id'] == "3") {
-                    $sql = "SELECT * FROM teacher3;";
-                } else if ($_GET['id'] == "4") {
-                    $sql = "SELECT * FROM teacher4;";
-                }
+
+                $sql = "SELECT * FROM teacher;";
+
 
                 $result = mysqli_query($conn, $sql);
 
@@ -64,7 +58,7 @@
                 }
                 ?>
 
-                </div>
+            </div>
         </center>
     </header>
 </body>

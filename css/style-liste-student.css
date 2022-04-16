@@ -71,24 +71,40 @@
     font-size: 210%;
 }
   
-table,
-th,td {
+.th,.td{
+  font-size: 170%; 
   border: 1px solid #111;
+  
+}
+.tr{
+  width: 80%;
   background-color: rgba(247, 34, 34, 0.4);
-
+  border: 1px solid #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-table {
-  width: 90%;
-}
-
-th {
+.classe{
+  width: 100%;
+  background-color: #cef03a;
+  border-color: transparent #111 transparent #111;
+  font-family: -webkit-pictograph;
   font-size: 170%;
+}
+
+.th {
+  width: 50%;
+  background-color: rgba(247, 34, 34, 0.4);
   font-family: sans-serif;
 }
 
-td {
-  font-size: 170%;
+.td {
+  width: 50%;
+  border-color: transparent #111 transparent transparent;
   font-family: -webkit-pictograph;
   color:rgb(15, 15, 15);
   
+}
+.long{
+  width: 65%;
 }
