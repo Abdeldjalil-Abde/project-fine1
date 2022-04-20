@@ -1,5 +1,7 @@
 <?php
+    session_start();
 function serch($class, $mail, $pwd) {
+
     require 'databaes-connect.php';
     $sql = "SELECT * FROM $class WHERE mail = ? AND pwd = ?";
     $stmt = mysqli_stmt_init($conn);
@@ -11,26 +13,31 @@ function serch($class, $mail, $pwd) {
         mysqli_stmt_store_result($stmt);
 
         if (mysqli_num_rows($result) > 0) {
+            
             $row = mysqli_fetch_assoc($result);
-            $first = $row['first_name'];
-            $last = $row['last_name'];
-            $gender = $row['gender'];
-            $adrass = $row['adress'];
-            $dat =  $row['dat'];
-            $tel =  $row['tel'];
+            $_SESSION['mail'] = $mail;
+            $_SESSION['pwd'] = $pwd;
+            $_SESSION['first-name'] = $row['first_name'];
+            $_SESSION['last-name'] = $row['last_name'];
+            $_SESSION['gender'] = $row['gender'];
+            $_SESSION['adrass'] = $row['adress'];
+            $_SESSION['dat'] =  $row['dat'];
+            $_SESSION['tel'] =  $row['tel'];
+            $_SESSION['hizb'] = $row['hizb'];
             if($class=='admin'){
                 $id = $row['id'];
-                header("Location: ../html/profile-admin.php?first_name=" . $first . "&last_name=" . $last . "&mail=" . $mail . "&pwd=" . $pwd . "&id=" .$id);
+                $_SESSION['id'] =   $id;
+                header("Location: ../html/profile-admin.php");
                   exit();
 
             }else if($class=="teacher"){
 
-                $id = $row['id'];
-                header("Location: ../html/profile-teacher.php?first_name=" . $first . "&last_name=" . $last . "&gender=" . $gender . "&adrass=" . $adrass . "&dat=" . $dat . "&tel=" . $tel . "&mail=" . $mail . "&pwd=" . $pwd . "&id=" . $id);
+                $_SESSION['id'] =  $row['id'];
+                header("Location: ../html/profile-teacher.php");
                 exit();
             }else{
 
-                header("Location: ../html/profile-student.php?first_name=" . $first . "&last_name=" . $last . "&gender=" . $gender . "&adrass=" . $adrass . "&dat=" . $dat . "&tel=" . $tel . "&mail=" . $mail . "&pwd=" . $pwd);
+                header("Location: ../html/profile-student.php");
                 exit();
             }
 

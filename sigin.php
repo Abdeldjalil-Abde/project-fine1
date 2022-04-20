@@ -59,7 +59,7 @@
               </label>
             </div>
              <button class="submit" type="submit" name="submit">
-              submit
+              تسجيل الدخول 
               </button>
           </form>
       </main>

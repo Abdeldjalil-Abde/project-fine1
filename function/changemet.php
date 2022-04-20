@@ -113,7 +113,7 @@ if (isset($_POST['change-pwd'])) {
                 mysqli_stmt_bind_param($stmt, "sss",$nouveau_mail, $mail, $pwd);
                 mysqli_stmt_execute($stmt);
                 } else {
-                    // header("Location: ../html/change-mail?error=sql1");
+                    header("Location: ../html/change-mail?error=sql1");
                     exit();
                 }
                 header("Location: ../html/profile-admin.php?first_name=" . $first . "&last_name=" . $last .  "&mail=" . $nouveau_mail . "&pwd=" . $pwd . "&id=" . $id);

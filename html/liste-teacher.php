@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>قائمة الطلبة </title>
+    <link rel="stylesheet" href="../css/style-header.css">
     <link rel="stylesheet" href="../css/style-liste-student.css">
 </head>
 
@@ -17,11 +19,14 @@
             </div>
             <div class="list">
                 <a href="../index.php">الصفحة الرئيسية</a>
-                <samp>حسنى </samp>
+                <a href="profile-admin.php"><?php echo  $_SESSION['first-name'] ;  ?></a>
                 <img src="../imaj/images.png" alt="">
             </div>
         </div>
-        <span class="listStudent"> قائمة الطلاب </span>
+        <div class="listStudent">
+           <span > قائمة الأساتذة </span>
+           <a href="profile-admin.php"> رجوع </a>
+        </div>
         <center>
             <div dir="rtl">
 
@@ -61,6 +66,7 @@
             </div>
         </center>
     </header>
+    
 </body>
 
 </html>

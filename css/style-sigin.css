@@ -146,11 +146,10 @@ form div input:valid + .lable::after {
   height: 60px;
   margin-top: 30px;
   border-radius: 40px;
-  background: linear-gradient(90deg, #755bea, #ff72c0, #55e7fc);
+  background: linear-gradient(44deg, #d1cbed, #6cef6c, #55e7fc);
   color: black;
   font-size: 30px;
   font-weight: 700;
-  letter-spacing: 4px;
   text-transform: uppercase;
 }
 form p {

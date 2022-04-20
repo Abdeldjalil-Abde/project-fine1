@@ -13,22 +13,25 @@ if (isset($_POST['submit'])) {
     $pwd_repeat = $_POST['pwd-repeat'];
     $teacher = $_POST['teacher'];
 
-    echo $teacher;
-
-    if (preg_match("/^[\x0600-\x06FF]/i", $first)) {
-        header("Location: ../signup.php?error=first&last_name=" . $last . "&gender=" . $gender . "&adrass=" . $adrass . "&date=" . $date . "&phone=" . $tel . "&mail=" . $mail . "&teacher=" . $teacher);
+    if (!preg_match("/^[\p{Arabic}]+$/u", $first)) {
+        header("Location: ../sinup.php?error=first&last_name=" . $last . "&gender=" . $gender . "&adrass=" . $adrass . "&dat=" . $date . "&tel=" . $tel . "&mail=" . $mail . "&teacher=" . $teacher);
         exit();
-    } else if (preg_match("/^[\x0600-\x06FF]/i", $last)) {
-        header("Location: ../signup.php?error=last&first_name=" . $first . "&gender=" . $gender . "&adrass=" . $adrass . "&date=" . $date . "&phone=" . $tel . "&mail=" . $mail . "&teacher=" . $teacher);
+    } else if (!preg_match("/^[\p{Arabic}]+$/u", $last)) {
+        header("Location: ../sinup.php?error=last&first_name=" . $first . "&gender=" . $gender . "&adrass=" . $adrass . "&dat=" . $date . "&tel=" . $tel . "&mail=" . $mail . "&teacher=" . $teacher);
         exit();
     } else if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-        header("Location: ../signup.php?error=mail&first_name=" . $first . "last_name=" . $last . "&gender=" . $gender . "&adrass=" . $adrass . "&date=" . $date . "&phone=" . $tel . "&teacher=" . $teacher);
+        header("Location: ../sinup.php?error=mail&first_name=" . $first . "last_name=" . $last . "&gender=" . $gender . "&adrass=" . $adrass . "&dat=" . $date . "&tel=" . $tel . "&teacher=" . $teacher);
         exit();
-    } else
-     if ($pwd !== $pwd_repeat) {
-        header("Location: ../signup.php?error=pwd&first_name=" . $first . "last_name=" . $last . "&gender=" . $gender . "&adrass=" . $adrass . "&date=" . $date . "&phone=" . $tel . "&mail=" . $mail . "&teacher=" . $teacher);
+    } else if ($pwd !== $pwd_repeat) {
+        header("Location: ../sinup.php?error=pwd&first_name=" . $first . "last_name=" . $last . "&gender=" . $gender . "&adrass=" . $adrass . "&dat=" . $date . "&tel=" . $tel . "&mail=" . $mail . "&teacher=" . $teacher);
         exit();
-    } else {
+    } else if ($teacher=="none") {
+        header("Location: ../sinup.php?error=none&first_name=" . $first . "last_name=" . $last . "&gender=" . $gender . "&adrass=" . $adrass . "&dat=" . $date . "&tel=" . $tel . "&mail=" . $mail . "&teacher=" . $teacher);
+        exit();
+    } else if ($gender=="") {
+        header("Location: ../sinup.php?error=gender&first_name=" . $first . "&last_name=" . $last . "&gender=" . $gender . "&adrass=" . $adrass . "&dat=" . $date . "&tel=" . $tel . "&mail=" . $mail . "&teacher=" . $teacher);
+        exit();
+    }else {
         require 'databaes-connect.php';
 
         if ($teacher == "teacher1") {
@@ -53,13 +56,13 @@ if (isset($_POST['submit'])) {
                 exit();
             } else {
                 if ($teacher == "teacher1") {
-                    $sql = "INSERT INTO  teacher1 (first_name, last_name,  gender, adress,  dat, tel, mail, pwd) VALUES ('$first', '$last','$gender','$adrass','$date', '$tel', '$mail', '$pwd');";
+                    $sql = "INSERT INTO  teacher1 (first_name, last_name,  gender, adress,  dat, tel, mail, pwd, hizb ) VALUES ('$first', '$last','$gender','$adrass','$date', '$tel', '$mail', '$pwd', 0);";
                 } elseif ($teacher == "teacher2") {
-                    $sql = "INSERT INTO teacher2 (first_name, last_name,  gender, adress,  dat, tel, mail, pwd) VALUES ('$first', '$last','$gender','$adrass','$date', '$tel', '$mail', '$pwd');";
+                    $sql = "INSERT INTO teacher2 (first_name, last_name,  gender, adress,  dat, tel, mail, pwd, hizb) VALUES ('$first', '$last','$gender','$adrass','$date', '$tel', '$mail', '$pwd', 0);";
                 } elseif ($teacher == "teacher3") {
-                    $sql = "INSERT INTO teacher3  (first_name, last_name,  gender, adress,  dat, tel, mail, pwd) VALUES ('$first', '$last','$gender','$adrass','$date', '$tel', '$mail', '$pwd');";
+                    $sql = "INSERT INTO teacher3  (first_name, last_name,  gender, adress,  dat, tel, mail, pwd, hizb) VALUES ('$first', '$last','$gender','$adrass','$date', '$tel', '$mail', '$pwd', 0);";
                 } elseif ($teacher == "teacher4") {
-                    $sql = "INSERT INTO teacher4 (first_name, last_name,  gender, adress,  dat, tel, mail, pwd) VALUES  ('$first', '$last','$gender','$adrass','$date', '$tel', '$mail', '$pwd');";
+                    $sql = "INSERT INTO teacher4 (first_name, last_name,  gender, adress,  dat, tel, mail, pwd, hizb) VALUES  ('$first', '$last','$gender','$adrass','$date', '$tel', '$mail', '$pwd', 0);";
                 }
 
 

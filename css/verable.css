@@ -1,0 +1,82 @@
+:root {
+    --font-1: Arial, Helvetica, sans-serif;
+
+    --title-size-0: 1rem;
+    --title-size-1: 1.3rem;
+    --title-size-2: 2rem;
+    --title-size-3: 2.5rem;
+    --title-size-4: 3rem;
+    --title-size-5: 3.5rem;
+    --title-size-6: 4rem;
+    --title-size-7: 4.5rem;
+    --title-size-8: 5rem;
+    --title-size-9: 5.5rem;
+
+    --text-size-1: 0.6rem;
+    --text-size-2: 0.8rem;
+    --text-size-3: 1rem;
+    --text-size-4: 1.2rem;
+    --text-size-5: 1.5rem;
+    --text-size-6: 1.7rem;
+    --text-size-7: 2.2rem;
+    --text-size-8: 2.5rem;
+    --text-size-9: 2.7rem;
+    --text-size-10: 3rem;
+
+    --text-weight-1: 300;
+    --text-weight-2: 500;
+    --text-weight-3: 700;
+    --text-weight-4: 900;
+
+    --blue-0: #0000ff;
+    --blue-1: #0f0fcf;
+    --blue-2: #2264d180;
+    --blue-3: #2264d1;
+    --blue-4: #2264d180;
+    --blue-x: #96afda8f;
+
+    --purple-1: #800080;
+    --purple-2: #8c16aa;
+    --purple-3: #591769;
+    --purple-4: #340141;
+
+    --green-1: #00ff00;
+    --green-2: #00bd00;
+    --green-3: #008800;
+    --green-4: #004b00;
+    --green-5: #002b00;
+    --green-6: #00ff0075;
+    --green-7: #00ff003f;
+
+    --red-1: #ff0000;
+    --red-2: #880000;
+    --red-3: #470000;
+
+    --orange-1: #ff4500;
+    --orange-2: #9b2900;
+    --orange-3: #5a1800;
+    --orange-4: #ca782ca1;
+
+    --yellow-1: #ffff00;
+    --yellow-2: #ffff00d2;
+    --yellow-3: #ffff008a;
+    --yellow-4: #ffff0054;
+
+    --dark-1: #000;
+    --dark-2: #0007;
+    --dark-3: #0004;
+    --dark-4: #0001;
+
+    --gray-1: #ede9e9;
+    --gray-2: #808080;
+    --gray-3: #999090;
+    --gray-4: #beb7b7;
+    --gray-5: #beb7b7af;
+    --gray-6: #beb7b749;
+
+    --white-1: #fff;
+    --white-2: #ffff;
+    --white-3: #fffa;
+    --white-4: #fff5;
+    --white-5: #fff1;
+}
