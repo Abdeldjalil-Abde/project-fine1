@@ -1,7 +1,7 @@
 <?php 
 session_start();
-if(!isset($_SESSION['first-name'])){
-    header('location:error.php');
+if(!isset($_SESSION['first_name'])){
+  header('location:jju.php');
 }else{
 ?>
 <!DOCTYPE html>
@@ -24,7 +24,7 @@ if(!isset($_SESSION['first-name'])){
               <div class="list">
                 <a href="../index.php">الصفحة الرئيسية</a>
                 <a href="../logout.php"> تسجيل الخروج </a>
-                <a href="profile-student.php"><?php echo  $_SESSION['first-name'] ;  ?></a>
+                <a href="profile-student.php"><?php echo  $_SESSION['first_name'] ;  ?></a>
                 <img src="../imaj/images.png" alt="">
               </div>
         </div>
@@ -37,9 +37,9 @@ if(!isset($_SESSION['first-name'])){
             <form action="">
                 <div>
                   <span>  الإسم :</span>
-                  <?php echo "<span class='info'>" . $_SESSION['first-name'] . "</span>"; ?>
+                  <?php echo "<span class='info'>" . $_SESSION['first_name'] . "</span>"; ?>
                   <span> القب :</span>
-                  <?php echo "<span class='info'>" . $_SESSION['last-name'] . "</span>"; ?>
+                  <?php echo "<span class='info'>" . $_SESSION['last_name'] . "</span>"; ?>
                                                                 
                 </div>
                 <div>

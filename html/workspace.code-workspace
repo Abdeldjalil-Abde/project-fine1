@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\project in Visual Studio Code\\IHM-TD-Project"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "IHM-TD-Project"
+	}
+}

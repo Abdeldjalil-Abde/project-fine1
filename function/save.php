@@ -16,15 +16,13 @@ if (isset($_POST['submit'])) {
         if (mysqli_stmt_prepare($stmt, $sql)) {
             mysqli_stmt_bind_param($stmt, "ss", $hizb, $mail);
             mysqli_stmt_execute($stmt);
-
-            echo "تم";
+            header("Location: ../html/list-student.php");
         } else {
 
             header("Location: ../html/change-mot-de-passe.php?error=sql1");
-            echo "لم يتم ";
             exit();
         }
     }
-    header("Location: ../html/liste-student.php");
+    header("Location: ../html/list-student.php");
     exit();
 }

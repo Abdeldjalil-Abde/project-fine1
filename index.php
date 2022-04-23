@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>مدرسة قرأنية</title>
   <link rel="stylesheet" href="css/style-home.css" />
+
 </head>
 
 <body>
@@ -17,9 +18,21 @@
         <img src="imaj/logo.png" alt="" />
       </div>
       <div class="list">
-        <a href="sinup.php">تسجيل حساب جديد</a>
-        <a href="sigin.php">تسجيل الدخول</a>
-        <a href="index.php">الصفحة الرئيسية</a>
+        <?php
+        if (isset($_SESSION['first_name'])) {
+          echo "
+            <a href='index.php'>الصفحة الرئيسية</a>
+            <a href='logout.php'>تسجيل الخروج </a>
+            <a href='function/profile.php'>" . $_SESSION['first_name'] . "</a>
+            <img src='imaj/images.png' >";
+        } else {
+          echo
+          "
+          <a href='index.php'>الصفحة الرئيسية</a>
+          <a href='sigin.php'>تسجيل الدخول</a>
+          <a href='sinup.php'>تسجيل حساب جديد</a> ";
+        }
+        ?>
       </div>
     </div>
     <div class="teterHeder">

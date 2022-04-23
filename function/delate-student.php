@@ -9,7 +9,7 @@ require 'databaes-connect.php';
     if (mysqli_stmt_prepare($stmt, $sql)) {
         mysqli_stmt_bind_param($stmt, "s", $mail);
         mysqli_stmt_execute($stmt);
-         header("Location: ../html/liste-student-all.php");
+         header("Location: ../html/list-student-all.php");
 
     }else{
         echo "<h1>error SQL</h1>";

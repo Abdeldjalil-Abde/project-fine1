@@ -1,4 +1,5 @@
 <?php
+session_start();
 function chang_pwd($class, $mail, $pwd, $nouveau_pwd) {
     require 'databaes-connect.php';
     $sql = "SELECT * FROM $class WHERE mail = ? AND pwd = ?";
@@ -12,28 +13,17 @@ function chang_pwd($class, $mail, $pwd, $nouveau_pwd) {
         if (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_assoc($result);
             if($class=="admin"){
-                $first = $row['first_name'];
-                 $last = $row['last_name'];
-                 $id = $row['id'];
                  $sql = " UPDATE  $class SET pwd = ? WHERE mail = ? AND pwd = ?";
                  if (mysqli_stmt_prepare($stmt, $sql)) {
                     mysqli_stmt_bind_param($stmt, "sss",$nouveau_pwd, $mail, $pwd);
                     mysqli_stmt_execute($stmt);
+                    $_SESSION['pwd'] = $nouveau_pwd;
                     } else {
                         header("Location: ../html/change-mot-de-passe?error=sql1");
                         exit();
                     }
-                    header("Location: ../html/profile-admin.php?first_name=" . $first . "&last_name=" . $last . "&mail=" . $mail . "&pwd=" . $nouveau_pwd . "&id=" . $id);
+                    header("Location: ../html/profile-admin.php");
                     exit();
-            }
-            $first = $row['first_name'];
-            $last = $row['last_name'];
-            $gender = $row['gender'];
-            $adrass = $row['adress'];
-            $dat =  $row['dat'];
-            $tel =  $row['tel'];
-            if($class=="teacher"){
-            $id = $row['id'];
             }
             $sql = " UPDATE  $class SET pwd = ? WHERE mail = ? AND pwd = ?";
             if (mysqli_stmt_prepare($stmt, $sql)) {
@@ -45,10 +35,10 @@ function chang_pwd($class, $mail, $pwd, $nouveau_pwd) {
             }
    
             if($class=="teacher"){
-            header("Location: ../html/profile-teacher.php?first_name=" . $first . "&last_name=" . $last . "&gender=" . $gender . "&adrass=" . $adrass . "&dat=" . $dat . "&tel=" . $tel . "&mail=" . $mail . "&pwd=" . $nouveau_pwd . "&id=" . $id);
+            header("Location: ../html/profile-teacher.php");
             exit();
             }else{
-                header("Location: ../html/profile-student.php?first_name=" . $first . "&last_name=" . $last . "&gender=" . $gender . "&adrass=" . $adrass . "&dat=" . $dat . "&tel=" . $tel . "&mail=" . $mail . "&pwd=" . $nouveau_pwd);
+                header("Location: ../html/profile-student.php");
                 exit();
             }
 
@@ -112,11 +102,13 @@ if (isset($_POST['change-pwd'])) {
                 if (mysqli_stmt_prepare($stmt, $sql)) {
                 mysqli_stmt_bind_param($stmt, "sss",$nouveau_mail, $mail, $pwd);
                 mysqli_stmt_execute($stmt);
+
                 } else {
                     header("Location: ../html/change-mail?error=sql1");
                     exit();
                 }
-                header("Location: ../html/profile-admin.php?first_name=" . $first . "&last_name=" . $last .  "&mail=" . $nouveau_mail . "&pwd=" . $pwd . "&id=" . $id);
+                $_SESSION['mail'] = $nouveau_mail;
+                header("Location: ../html/profile-admin.php");
                 exit();
     
             } else {

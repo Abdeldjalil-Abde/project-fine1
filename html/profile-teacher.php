@@ -1,5 +1,9 @@
 
-<?php session_start(); ?>
+<?php session_start();
+if(!isset($_SESSION['first_name'])){
+  header('location:jju.php');
+}else{
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +25,7 @@
       <div class="list">
         <a href="../index.php">الصفحة الرئيسية</a>
         <a href="../logout.php"> تسجيل الخروج </a>
-        <a href="profile-teacher.php" > <?php echo $_SESSION['first-name'];  ?> </a>
+        <a href="profile-teacher.php" > <?php echo $_SESSION['first_name'];  ?> </a>
         <img src="../imaj/images.png" alt="">
       </div>
     </div>
@@ -56,9 +60,9 @@
       <form action="">
         <div>
           <span> الإسم :</span>
-          <?php echo "<span class='info'>" . $_SESSION['first-name'] . "</span>"; ?>
+          <?php echo "<span class='info'>" . $_SESSION['first_name'] . "</span>"; ?>
           <span> القب :</span>
-          <?php echo "<span class='info'>" . $_SESSION['last-name'] . "</span>"; ?>
+          <?php echo "<span class='info'>" . $_SESSION['last_name'] . "</span>"; ?>
 
         </div>
         <div>
@@ -94,7 +98,7 @@
         <div class="numberStudent"> عدد الطلاب في المادة :
           <span> <?php echo number_column($_SESSION['id']); ?> </span>
         </div>
-        <a class="chang" href="liste-student.php?id=<?php echo $_SESSION['id'] ?> "> قائمة الطلاب </a>
+        <a class="chang" href="list-student.php?id=<?php echo $_SESSION['id'] ?> "> قائمة الطلاب </a>
       </div>
 
       <div class="searchs">
@@ -122,7 +126,7 @@
             ?>
             <?php
       
-              echo ' <button class="submit" type="submit" name="submit" value="4" >بحث</button>';
+              echo ' <button class="submit" type="submit" name="submit"  >بحث</button>';
             ?>
           </form>
         </div>
@@ -178,3 +182,4 @@
 </body>
 
 </html>
+<?php }?>

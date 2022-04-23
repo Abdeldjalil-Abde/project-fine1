@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if(!isset($_SESSION['first-name'])){
+if(!isset($_SESSION['first_name'])){
     header('location:jju.php');
 }else{
 ?>
@@ -25,7 +25,7 @@ if(!isset($_SESSION['first-name'])){
             </div>
             <div class="list">
                 <a href="../index.php">الصفحة الرئيسية</a>
-                <a href="profile-teacher.php" > <?php echo $_SESSION['first-name'];  ?> </a>
+                <a href="profile-teacher.php" > <?php echo $_SESSION['first_name'];  ?> </a>
                 <img src="../imaj/images.png" alt="">
             </div>
         </div>
@@ -78,7 +78,7 @@ if(!isset($_SESSION['first-name'])){
                     }
                      echo" <input type='hidden' name='number-student' required autocomplete='off' value='" . $n - 1 . "' />";
                      echo" <input type='hidden' name='id_teacher' required autocomplete='off' value='" . $_SESSION['id'] . "' />";
-                     echo" <input type='hidden' name='first-name' required autocomplete='off' value='" . $_SESSION['first-name'] . "' />";
+                     echo" <input type='hidden' name='first-name' required autocomplete='off' value='" . $_SESSION['first_name'] . "' />";
 
 
                     ?>

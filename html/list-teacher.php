@@ -1,4 +1,8 @@
-<?php session_start();?>
+<?php session_start();
+if(!isset($_SESSION['first_name'])){
+    header('location:jju.php');
+}else{
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +23,7 @@
             </div>
             <div class="list">
                 <a href="../index.php">الصفحة الرئيسية</a>
-                <a href="profile-admin.php"><?php echo  $_SESSION['first-name'] ;  ?></a>
+                <a href="profile-admin.php"><?php echo  $_SESSION['first_name'] ;  ?></a>
                 <img src="../imaj/images.png" alt="">
             </div>
         </div>
@@ -70,3 +74,4 @@
 </body>
 
 </html>
+<?php }?>

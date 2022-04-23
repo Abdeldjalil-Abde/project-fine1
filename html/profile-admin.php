@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php session_start();
+if(!isset($_SESSION['first_name'])){
+    header('location:jju.php');
+}else{
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +25,7 @@
             <div class="list">
                 <a href="../index.php">الصفحة الرئيسية</a>
                 <a href="../logout.php"> تسجيل الخروج </a>
-                <a href="profile-admin.php"><?php echo  $_SESSION['first-name'] ;  ?></a>
+                <a href="profile-admin.php"><?php echo  $_SESSION['first_name'];  ?></a>
                 <img src="../imaj/images.png" alt="">
             </div>
         </div>
@@ -94,7 +98,7 @@
                             <span> <?php echo number_column("student");
                                     ?> </span>
                         </div>
-                        <a class="chang" href="liste-student-all.php?"> قائمة الطلاب </a>
+                        <a class="chang" href="list-student-all.php"> قائمة الطلاب </a>
                     </div>
                     <div class="searchs">
                         <div class="search"> البحث </div>
@@ -119,30 +123,75 @@
                                     }
                                 }
                                 ?>
-                                <button class="submit" type="submit" name="information" value="444">بحث</button>
+                                <button class="submit" type="submit" name="information" >بحث</button>
                             </form>
                         </div>
                         <div class="infStudent">
                             <div>
                                 <span> الإسم :</span>
                                 <?php
-                                if (isset($_GET['first_uesr'])) 
+                                if (isset($_GET['first_uesr']))
                                     echo "<span class='info'>" . $_GET['first_uesr'] . "</span>";
-                                
+
                                 ?>
                                 <span> القب :</span>
                                 <?php
-                                if (isset($_GET['last_uesr'])) 
-                                    echo "<span class='info'>" .$_GET['last_uesr'] . "</span>";
-                                
+                                if (isset($_GET['last_uesr']))
+                                    echo "<span class='info'>" . $_GET['last_uesr'] . "</span>";
+
                                 ?>
                             </div>
                             <div>
                                 <span>تاريخ الميلاد : </span>
                                 <?php
-                                if (isset($_GET['dat_uesr'])) 
+                                if (isset($_GET['dat_uesr']))
                                     echo "<span class='info'>" . $_GET['dat_uesr'] . "</span>";
-                                
+
+
+                                ?>
+                            </div>
+                            <div>
+                                <span> الرتبة :</span>
+                                <?php
+                                if (isset($_GET['class']))
+                                    if ($_GET['class'] == "teacher") {
+                                        echo "<span class='info'> استاذ </span>";
+                                    } else {
+                                        echo "<span class='info'> طالب  </span>";
+                                    }
+                                ?>
+                            </div>
+                            <div>
+                                <?php
+                                if (isset($_GET['class'])) {
+                                    if ($_GET['class'] == "teacher") {
+                                        echo "<span> استاذ في القسم : </span>";
+                                    } else {
+                                        echo "<span> يدرس  في القسم : </span>";
+                                    }
+                                }
+                                ?>
+                                <?php
+                                if (isset($_GET['class']))
+                                    if ($_GET['class'] == "teacher1") {
+                                        echo "<span class='info'> الأول </span>";
+                                    } else if ($_GET['class'] == "teacher2") {
+                                        echo "<span class='info'> الثاني  </span>";
+                                    } else if ($_GET['class'] == "teacher3") {
+                                        echo "<span class='info'> الثالث  </span>";
+                                    } else if ($_GET['class'] == "teacher4") {
+                                        echo "<span class='info'> الرابع  </span>";
+                                    } else if ($_GET['class'] == "teacher") {
+                                        if ($_GET['id'] == "1") {
+                                            echo "<span class='info'> الأول </span>";
+                                        } else if ($_GET['id'] == "2") {
+                                            echo "<span class='info'> الثاني  </span>";
+                                        } else if ($_GET['id'] == "3") {
+                                            echo "<span class='info'> الثالث  </span>";
+                                        } else if ($_GET['id'] == "4") {
+                                            echo "<span class='info'> الرابع  </span>";
+                                        }
+                                    }
 
                                 ?>
                             </div>
@@ -155,7 +204,7 @@
                             <span> <?php echo number_column("teacher");
                                     ?> </span>
                         </div>
-                        <a class="chang" href="liste-teacher.php"> قائمة الأساتذة </a>
+                        <a class="chang" href="list-teacher.php"> قائمة الأساتذة </a>
                     </div>
                 </div>
         </main>
@@ -188,3 +237,4 @@
 </body>
 
 </html>
+<?php }?>

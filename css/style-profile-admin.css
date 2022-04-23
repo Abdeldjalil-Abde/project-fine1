@@ -1,8 +1,4 @@
 
-  
-  
-  
- 
   .center{
     width: 88%;
     height: 80%;
@@ -108,7 +104,7 @@
   border: 2px #111 solid;
   background-color: rgba(247, 34, 34, 0.4);
   border-radius: 20% 20% 12% 12%;
-  top: 55%;
+  top: 53%;
   right: 36%;
   z-index: 3;
 }
@@ -196,7 +192,7 @@
   height: 100%;
   position: absolute;
   left: 0%;
-  bottom: -6%;
+  bottom: -5%;
   border-bottom: 3px solid rgb(0, 250, 60);
   transform: translate(-100%);
   transition: 0.6s ease;

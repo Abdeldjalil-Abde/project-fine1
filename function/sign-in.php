@@ -17,13 +17,14 @@ function serch($class, $mail, $pwd) {
             $row = mysqli_fetch_assoc($result);
             $_SESSION['mail'] = $mail;
             $_SESSION['pwd'] = $pwd;
-            $_SESSION['first-name'] = $row['first_name'];
-            $_SESSION['last-name'] = $row['last_name'];
+            $_SESSION['first_name'] = $row['first_name'];
+            $_SESSION['last_name'] = $row['last_name'];
             $_SESSION['gender'] = $row['gender'];
             $_SESSION['adrass'] = $row['adress'];
             $_SESSION['dat'] =  $row['dat'];
             $_SESSION['tel'] =  $row['tel'];
             $_SESSION['hizb'] = $row['hizb'];
+            $_SESSION['class'] = $class;
             if($class=='admin'){
                 $id = $row['id'];
                 $_SESSION['id'] =   $id;

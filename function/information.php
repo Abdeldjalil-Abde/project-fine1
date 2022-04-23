@@ -15,13 +15,14 @@ function serch($class, $mail)
         mysqli_stmt_store_result($stmt1);
 
         if (mysqli_num_rows($result1) > 0) {
-            
             $row = mysqli_fetch_assoc($result1);
             $first = $row['first_name'];
             $last = $row['last_name'];
             $dat =  $row['dat'];
-
-            header("Location: ../html/profile-admin.php?first_uesr=" . $first ."&last_uesr=" . $last ."&dat_uesr=" . $dat);
+            if($class == "teacher"){
+            $id = $row['id'];
+            }
+            header("Location: ../html/profile-admin.php?first_uesr=" . $first ."&last_uesr=" . $last ."&dat_uesr=" . $dat ."&class=" . $class ."&id=" .$id);
             exit();
         } else {
             return 0;
@@ -77,7 +78,7 @@ if (isset($_POST['submit'])) {
     if (!filter_var($mail_uesr, FILTER_VALIDATE_EMAIL)) {
 
 
-        header("Location: ../html/profile-admin.php?error=mail&mail=" . $mail_student . "&first_name=" . $first . "&last_name=" . $last . "&mail=" . $mail . "&pwd=" . $pwd . "&id=" . $id);
+        header("Location: ../html/profile-admin.php");
         exit();
     } else {
 

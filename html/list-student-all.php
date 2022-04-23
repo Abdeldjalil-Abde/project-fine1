@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php session_start();
+if(!isset($_SESSION['first_name'])){
+    header('location:jju.php');
+}else{
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +24,7 @@
             </div>
             <div class="list">
                 <a href="../index.php">الصفحة الرئيسية</a>
-                <a href="profile-admin.php"><?php echo  $_SESSION['first-name'] ;  ?></a>
+                <a href="profile-admin.php"><?php echo  $_SESSION['first_name'] ;  ?></a>
                 <img src="../imaj/images.png" alt="">
             </div>
         </div>
@@ -37,11 +41,11 @@
                     <div class="th">القب </div>
                     <div class="th">تاريخ الميلاد </div>
                     <div class="th long">البريد الإلكتروني </div>
-                    <div class="th long"> عدد الأحزاب </div>
+                    <div class="th "> عدد الأحزاب </div>
 
                 </div>
                 
-
+              
                     <?php
                     require "../function/databaes-connect.php";
                     for ($i = 1; $i < 5; $i++) {
@@ -62,6 +66,7 @@
                                            <div class='td'>" . $row['last_name'] . "</div>
                                            <div class='td'>" . $row['dat'] . "</div>
                                            <div class='td long'>" . $row['mail'] . "</div>
+                                           <div class='td '>" . $row['hizb'] . "</div>
                                            
                                            <a class='delate' href='../function/delate-student.php?mail=" . $row['mail'] . "&teacher=" . $i .  "'> حذف  </a>
                         
@@ -80,3 +85,4 @@
 </body>
 
 </html>
+<?php }?>
