@@ -15,7 +15,6 @@
       <div class="logo">
         <img src="imaj/logo.png" alt="" />
         <div class="list">
-          <a href="sinup.php">تسجيل حساب جديد</a>
           <a href="sigin.php">تسجيل الدخول</a>
           <a href="index.php">الصفحة الرئيسية</a>
         </div>

@@ -36,10 +36,10 @@
       </div>
     </div>
     <div class="teterHeder">
-      <div class="introdtion">مدرسة الفرقان لتعليم القراني</div>
+      <div class=" text">  مدرسة الفرقان لتعليم القراني  </div>
+      <div class="text2 text"> { خَيْرُكُمْ مَنْ تَعَلَمَ القُرآن وَ عَلَمَهُ }  </div>
       <div class="Register"><a href="">التسجيل في الدورة</a></div>
       <div class="btn">
-        <div class="introdtion1">المواد المتوفرة في الدورة</div>
         <div class="modle1">
           <a href="" class="btn1"> تفسير القران </a>
           <a href="" class="btn1"> حصن المسلم</a>

@@ -10,7 +10,7 @@
 .listStudent a{
   width: 9%;
   height: 7%;
-  background: linear-gradient(90deg, #5293be, #498f8f, #55e7fc);
+  background: linear-gradient(0deg, #02123e, #31a16f);
   border: 2px #000 solid;
   border-color: rgb(119, 118, 118) rgb(37, 34, 34) rgb(37, 34, 34) rgb(119, 118, 118) ;
   border-radius: 25px;
@@ -68,7 +68,7 @@
   width: 65%;
   overflow: auto;
 }
-.delate{
+.buttom{
     width: 6%;
     height: 3.5%;
     position: absolute;
@@ -82,6 +82,9 @@
     color: #000;
     cursor: context-menu;
 }
+.insert{
+  background: linear-gradient(0deg, #02123e, #31a16f);
+}
 .delate:active{
   border-color: rgb(37, 34, 34) rgb(119, 118, 118) rgb(119, 118, 118) rgb(37, 34, 34);
 }
@@ -90,7 +93,7 @@
   height: 60%;
   margin-top: 30px;
   border-radius: 40px;
-  background: linear-gradient(44deg, #d1cbed, #6cef6c, #55e7fc);
+  background: linear-gradient(0deg, #02123e, #31a16f);
   color: black;
   font-size: 30px;
   font-weight: 700;

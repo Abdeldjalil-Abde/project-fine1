@@ -1,0 +1,210 @@
+R1   :  if  id37  AND  r1    than  r1 
+R2   :  if  id5   AND  r2    than  r2 
+R3   :  if  r2    AND  id14  AND  id56  than r3 
+R4   :  if  r2    AND  id15  AND  id35  than r3 
+R5   :  if  r2    AND  id14  AND  id35  than r3 
+R6   :  if  r2    AND  id16  AND  id35  than r4 
+R7   :  if  r2    AND  id16  than  r5 
+R8   :  if  r2    AND  id13  than  r5 
+R9   :  if  r5    AND  id25  than  r6 
+R10  :  if  id6   AND  id15  than  r7 
+R11  :  if  r2    AND  id16  than  r8  results
+R12  :  if  id4   AND  id37  than  r9 
+R13  :  if  id23  than r10 
+R14  :  if  r10   AND  r4    than  r11 
+R15  :  if  r10   AND  id47  than  r12 
+R16  :  if  id21  AND  id18  AND   id39  than r13 
+R17  :  if  id21  AND  id18  AND   id40  than r13 
+R18  :  if  id22  AND  id18  AND   id39  than r13 
+R19  :  if  id22  AND  id18  AND   id40  than r13 
+R20  :  if  id19  AND  id17  AND   id45  than r14 
+R21  :  if  id42  AND  id9   AND   id18  than r15 
+R22  :  if  r10   AND  id23  than  r16 
+R23  :  if  id19  AND  id17  AND   id27  than r17 
+R24  :  if  id25  AND  id55  than  r18 
+R25  :  if  r2    AND   r18  than  r19 
+R26  :  if  id51  than  r20 
+R27  :  if  id19  AND  id41  than  r21 
+R28  :  if  id24  AND  id33  than  r22 
+R29  :  if  id24  AND  id34  than  r22 
+R30  :  if  r12   AND  id38  than  r23 
+R31  :  if  id59  AND  id44  AND   id55  than r24 
+R32  :  if  r2    AND  id14  than  r25 
+R33  :  if  id22  AND  id47  than  r26 
+R34  :  if  id25  AND  id43  than  r27 
+R35  :  if  id19  AND  id29  than  r28 
+R36  :  if  id20  AND  id29  than  r28 
+R37  :  if  id10  AND  id18  than  r28 
+R38  :  if  r2    AND  id26  AND   id30  AND id18 than r28 
+R39  :  if  id28  AND  id18  than  r30 
+R40  :  if  id25  AND  id46  than  r31 
+R41  :  if  id25  AND  id58  than  r32 
+R42  :  if  id31  than  r33 
+R43  :  if  id19  AND  id18  than  r34 
+R44  :  if  r11   AND  id30  than  r34
+R45  :  if  id9   AND  id1   than  r35 
+R46  :  if  id12  AND  id36  than  r36 
+R47  :  if  r2    AND  id3   than  r37 
+R48  :  if  id52  AND  id54  AND   id53  than r38 
+R49  :  if  r2    AND  id25  AND   id57  than r39 
+R50  :  if  r35   than r40 
+R51  :  if  r2    AND  id14  AND    id2  than r41
+R52  :  if  id7   than r42 
+R53  :  if  id20  than r43 
+R54  :  if  id21  than r43 
+R55  :  if  r2    AND  id32  then   r44  
+R56  :  if  r10   AND  r43   than   r45 
+R57  :  if  id8   AND  id25  than   r46 
+  
+results{
+   r1: flower end rot
+   r2: sulfur deficiency
+   r3: Nitrogen deficiency
+   r4: iron deficiency
+   r5: Magnesium deficiency
+   r6: phosphorous deficiency
+   r7: potassium deficiency
+   r8: calcium deficiency
+   r9: Boron deficiency
+   r10: eternity spot
+   r11: manganese deficiency
+   r12: nail head stained
+   r13: black mold
+   r14: Downy white
+   r15: gray mold
+   r16: gummy stalk blight
+   r17: powdery mildew
+   r18: root rot
+   r19: wilt diseases
+   r20: irregular irrigation
+   r21: bean rust
+   r22: late seminar
+   r23: anthracnose
+   r24: white leg rot
+   r25: leaf mosaic virus
+   r26: maculopapularis
+   r27: bacterial ulcer
+   r28: spiders
+   r29: manna
+   r30: cotton leaf worm
+   r31: cutworm
+   r32: digger
+   r33: tunnel makers
+   r34: whitefly
+   r35: copper deficiency
+   r36: zinc deficiency
+   r37: molybdenum deficiency
+   r38: fruit fly of the substratum
+   r39: nematode
+   r40: thirst
+   r41: increase irrigation
+   r42: frost
+   r43: sun sting
+   r44: increased salinity
+   r45: early seminar
+   r46: chemical injury
+}
+ {
+         leaves : {
+             leaves appearance : {    
+                    id1 : dwarf
+                    id2 : normal
+                    id3 : light green
+                    id4 : unnatural
+            } 
+            leaves colors : {
+                     id5 : yellow
+                     id6 : brown
+                     id7 : purple
+                     id8 : gray
+                     id9 : dark green
+                     id10 : green Brkech
+                     id11 : brown with black rings
+                     id12 : pink   
+            }
+             leaves colors positioning : {
+                     id13 : middle of the leaves
+                     id14 : full leaves
+                     id15 : from bottom to top
+                     id16 : from top to bottom
+                     id17 : on the lower surface
+                     id18 : On the bottom surface
+            }
+
+             leaves spots colors : {
+                     id19 : yellow spots
+                     id20 : white spots
+                     id21 : gray spots
+                     id22 : black spots
+                     id23 : brown with black rings
+                     id24 : brown spots surrounded by a yellow halo
+            }
+
+             leaves other notes :{
+                    id25 : withered
+                    id26 : wrinkled
+                    id27 : white powder
+                    id28 : holes or stabbed
+                    id29 : spider webs
+                    id30 : Honey Symposium
+                    id31 : zigzag tunnels            
+                    id32 : shaped like a cup
+                    id33 : gray fungal growths
+                    id34 : purple fungal growths
+                    id35 : green leaf veins
+                    id36 : yellow leaf veins
+                    id37 : leaves irregular
+            }
+        }
+        stems : {
+            stems colors :{
+                     id59 : brown
+                }
+            stems spots{
+                     id38 : brown spots
+                     id39 :  gray spots
+                     id40  :black spots
+                     id41 : yellow spots
+                     id42 : dark green spots
+                     id43 : blisters
+                    id44 : white growths
+                    id45 : fluffy growths
+                    id46 : Gray larvae in the stem near the soil
+                }
+            }
+        }
+
+         fruits {
+            
+                
+                fruits spots :{
+                     id47 : black spots on fruits
+                     id48 : Brown spots on fruits
+                     id49 : White spots on the fruits
+                     id50 : Gray spots with black rings on the fruits
+                     id51 : Deep cracks on the fruits
+                     id52 : sticky liquid on fruits
+                     id53 : Spending by larvae on fruits
+                }
+                fruits positioning {
+                     id54 :on the surface of the fruits
+                }
+            
+        }
+
+         roots : {
+                roots colors {
+                    id55 : brown
+            }
+             roots shapes :{
+                fruits shapes{
+                    id56 : natural roots
+                    id57 : roots with knots
+                }
+            }
+        }
+        soil shapes {
+                    id58 : Zigzag tunnels after irrigation in the soil 
+        }
+        
+    }

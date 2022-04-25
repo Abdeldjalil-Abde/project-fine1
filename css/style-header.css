@@ -5,7 +5,7 @@
 }
 
 header {
-  background-image: url(../imaj/277691959_3012909362305554_9162559267468101750_n.png);
+  background-image: url(../imaj/IMG.jpg);
   width: 100vw;
   min-height: 100vh;
   background-size: cover;
@@ -15,7 +15,7 @@ header {
   display: flex;
   width: 100vw;
   height: 15%;
-  background-color: #84a1be;
+  background: linear-gradient(0deg, #02123e, #31a16f);
   box-shadow: 0px 0px 1px rgb(37, 37, 37),
                 0px 0px 3px rgb(37, 37, 37),
                 0px 0px 6px rgb(37, 37, 37),
@@ -46,7 +46,7 @@ header {
   font-size: 140%;
   padding: 10px 10px;
   text-transform: uppercase;
-  color: rgb(0, 0, 0);
+  color: rgb(248, 246, 246);
   margin-right: 2%;
 }
 

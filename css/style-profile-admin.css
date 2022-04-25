@@ -33,7 +33,7 @@
     border-radius: 30px;
     border: 2px #000 solid;
     border-color: rgb(119, 118, 118) rgb(37, 34, 34) rgb(37, 34, 34) rgb(119, 118, 118) ;
-    background: linear-gradient(90deg, #4482ac, #498f8f, #55e7fc);
+    background: linear-gradient(0deg, #02123e, #31a16f);
     font-size: 25px;
     text-decoration: none;
     font-family: -webkit-body;
@@ -223,7 +223,7 @@
   margin-top: 30px;
   margin-left: 17%;
   border-radius: 40px;
-  background: linear-gradient(90deg, #4482ac, #498f8f, #55e7fc);
+  background: linear-gradient(0deg, #02123e, #31a16f);
   color: black;
   font-size: 25px;
   font-weight: 500;

@@ -68,7 +68,7 @@ if(!isset($_SESSION['first_name'])){
                                            <div class='td long'>" . $row['mail'] . "</div>
                                            <div class='td '>" . $row['hizb'] . "</div>
                                            
-                                           <a class='delate' href='../function/delate-student.php?mail=" . $row['mail'] . "&teacher=" . $i .  "'> حذف  </a>
+                                           <a class='delate buttom' href='../function/delate-student.php?mail=" . $row['mail'] . "&teacher=" . $i .  "'> حذف  </a>
                         
                                     </div>
                                  ";

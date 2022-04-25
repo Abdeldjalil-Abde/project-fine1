@@ -29,7 +29,7 @@ button{
   width: 20%;
   margin-right: 10%;
   font-size: 20px;
-  background: linear-gradient(90deg, #4482ac, #498f8f, #55e7fc);
+  background: linear-gradient(0deg, #02123e, #31a16f);
   border-radius: 40px;
   color: black;
   font-weight: 500;
@@ -41,7 +41,7 @@ button{
   border-radius: 30px;
   border: 2px #000 solid;
   border-color: rgb(119, 118, 118) rgb(37, 34, 34) rgb(37, 34, 34) rgb(119, 118, 118) ;
-  background: linear-gradient(90deg, #4482ac, #498f8f, #55e7fc);
+  background: linear-gradient(0deg, #02123e, #31a16f);
   font-size: 25px;
   text-decoration: none;
   font-family: -webkit-body;
@@ -227,7 +227,7 @@ button{
   margin-top: 30px;
   margin-left: 30px;
   border-radius: 40px;
-  background: linear-gradient(90deg, #4482ac, #498f8f, #55e7fc);
+  background: linear-gradient(0deg, #02123e, #31a16f);
   color: black;
   font-size: 25px;
   font-weight: 500;
