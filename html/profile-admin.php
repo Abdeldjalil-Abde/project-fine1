@@ -92,6 +92,11 @@ if(!isset($_SESSION['first_name'])){
                     </div>
                 </form>
                 <div class="ensmble-list">
+                    <div class="account">
+                        <span>عدد الحسابات الغير المفعلة : </span>
+                        <span>7</span>
+                         <a class="chang" href=""> سجل الحسابات </a>
+                    </div>
                     <div class="students">
                         <div class="student"> الطلاب </div>
                         <div class="numberStudent"> عدد الطلاب في المادة :
