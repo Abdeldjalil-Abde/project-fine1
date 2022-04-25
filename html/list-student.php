@@ -72,7 +72,6 @@ if(!isset($_SESSION['first_name'])){
                         <div class='td '>
                              <input type='number' name='hezb".$n."' required autocomplete='off' value='". $row['hizb'] . "' />
                        </div>
-                       <a class='insert buttom' href='../function/insert-student.php?mail=" . $row['mail'] ."'> إضافة </a>
                     </div>  ";
                             $n = $n + 1;
                         }
