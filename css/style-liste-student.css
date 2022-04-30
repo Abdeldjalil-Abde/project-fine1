@@ -24,6 +24,70 @@
 .listStudent a:active{
   border-color: rgb(37, 34, 34) rgb(119, 118, 118) rgb(119, 118, 118) rgb(37, 34, 34);
 }
+.confirm{
+  width: 25%;
+  aspect-ratio: 2/1;
+  background-color: aquamarine;
+  border: 2px #000 solid;
+  border-radius: 35px;
+
+  position: absolute;
+  top:35%;
+  right: 38%;
+  display:none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.3s;
+}
+
+.confirm div{
+  width: 48%;
+  aspect-ratio: 2/1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.confirm p{
+  font-size: 30px;
+}
+.confirm span:nth-child(1){
+  width: 45%;
+    aspect-ratio: 2/1;
+    background-color: red;
+    border: 2px solid;
+    border-color: rgb(119, 118, 118) rgb(37, 34, 34) rgb(37, 34, 34) rgb(119, 118, 118) ;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: context-menu;
+ 
+}
+.confirm span:nth-child(1):hover{
+  background-color: #f52e2e;
+}
+.confirm span:nth-child(2){
+    width: 45%;
+    aspect-ratio: 2/1;
+    background-color: #7ff9ff;
+    border: 2px solid;
+    border-color: rgb(119, 118, 118) rgb(37, 34, 34) rgb(37, 34, 34) rgb(119, 118, 118) ;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: context-menu;
+}
+.confirm span{
+  border-color: rgb(119, 118, 118) rgb(37, 34, 34) rgb(37, 34, 34) rgb(119, 118, 118) ;
+}
+.confirm span:active{
+  border-color: rgb(37, 34, 34) rgb(119, 118, 118) rgb(119, 118, 118) rgb(37, 34, 34);
+}
+.confirm span:nth-child(2):hover{
+  background-color: #7fc1ff;
+}
 .th,.td{
   font-size: 170%; 
   border: 1px solid #111;
@@ -37,6 +101,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .classe{
   width: 100%;
   background-color: #cef03a;
@@ -44,7 +109,10 @@
   font-family: -webkit-pictograph;
   font-size: 170%;
 }
-
+.color{
+  background-color: rgba(247, 34, 34, 0.7);
+  
+}
 .th {
   width: 50%;
   background-color: rgba(247, 34, 34, 0.4);
@@ -68,7 +136,7 @@
   width: 65%;
   overflow: auto;
 }
-.buttom{
+.delate,.active{
     width: 6%;
     height: 3.5%;
     position: absolute;
@@ -85,8 +153,11 @@
 .insert{
   background: linear-gradient(0deg, #02123e, #31a16f);
 }
-.delate:active{
+.delate:active,.active:active{
   border-color: rgb(37, 34, 34) rgb(119, 118, 118) rgb(119, 118, 118) rgb(37, 34, 34);
+}
+.active{
+  background: linear-gradient(0deg, #02123e, #31a16f);
 }
 .submit {
   width: 20%;

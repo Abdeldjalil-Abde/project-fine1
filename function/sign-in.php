@@ -1,53 +1,50 @@
 <?php
-    session_start();
-function serch($class, $mail, $pwd) {
-
+session_start();
+function search($class, $mail, $pwd)
+{
     require 'databaes-connect.php';
-    $sql = "SELECT * FROM $class WHERE mail = ? AND pwd = ?";
+    $sql = "SELECT *, c.name_class FROM $class s,class c WHERE mail = ? AND pwd = ? AND c.id = s.id_class ";
     $stmt = mysqli_stmt_init($conn);
+
     if (mysqli_stmt_prepare($stmt, $sql)) {
+
         mysqli_stmt_bind_param($stmt, "ss", $mail, $pwd);
         mysqli_stmt_execute($stmt);
 
         $result = mysqli_stmt_get_result($stmt);
         mysqli_stmt_store_result($stmt);
-
         if (mysqli_num_rows($result) > 0) {
-            
+
             $row = mysqli_fetch_assoc($result);
             $_SESSION['mail'] = $mail;
             $_SESSION['pwd'] = $pwd;
             $_SESSION['first_name'] = $row['first_name'];
             $_SESSION['last_name'] = $row['last_name'];
             $_SESSION['gender'] = $row['gender'];
-            $_SESSION['adrass'] = $row['adress'];
+            $_SESSION['location'] = $row['location'];
             $_SESSION['dat'] =  $row['dat'];
             $_SESSION['tel'] =  $row['tel'];
             $_SESSION['hizb'] = $row['hizb'];
-            $_SESSION['class'] = $class;
-            if($class=='admin'){
-                $id = $row['id'];
-                $_SESSION['id'] =   $id;
+            $_SESSION['class'] = $row['name_class'];
+            $_SESSION['status'] = $row['status'];
+            if ($_SESSION['status'] == 2) {
                 header("Location: ../html/profile-admin.php");
-                  exit();
-
-            }else if($class=="teacher"){
-
-                $_SESSION['id'] =  $row['id'];
+                exit();
+            } else if ($_SESSION['status']  == 1) {
+                $_SESSION['id_class'] = $row['id_class'];
                 header("Location: ../html/profile-teacher.php");
                 exit();
-            }else{
-
+            } else {
                 header("Location: ../html/profile-student.php");
                 exit();
             }
-
         } else {
             return 0;
         }
     } else {
-        header("Location: ../sigin.php?error=sql1&way=" . $submit);
-         exit();
+
+         header("Location: ../sigin.php?error=sql1");
+        exit();
     }
 }
 
@@ -58,24 +55,35 @@ if (isset($_POST['submit'])) {
     $pwd = $_POST['pwd'];
 
     if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-        header("Location: ../sigin.php?error=mail&mail=" . $mail );
+        header("Location: ../sigin.php?error=mail&mail=" . $mail);
         exit();
     } else {
 
-        $sql = "";
+        require 'databaes-connect.php';
+        $sql = "SELECT * FROM active WHERE mail = ?;";
+        $stmt = mysqli_stmt_init($conn);
+        if (mysqli_stmt_prepare($stmt, $sql)) {
+            mysqli_stmt_bind_param($stmt, "s", $mail);
+            mysqli_stmt_execute($stmt);
 
-        if (serch("teacher1", $mail, $pwd)) {
-        } else if (serch("teacher2", $mail, $pwd)) {
-        } else if (serch("teacher3", $mail, $pwd)) {
-        } else if (serch("teacher4", $mail, $pwd)) {
-        } else if (serch("teacher", $mail, $pwd)) {
-        } else if (serch("admin", $mail, $pwd)){
-        }else{
-                header("Location: ../sigin.php?error=not" );
-                 exit();
+            $result = mysqli_stmt_get_result($stmt);
+            mysqli_stmt_store_result($stmt);
+
+            if (mysqli_num_rows($result) > 0) {
+                  header("Location: ../html/waiting.php");
+                    exit();
+            } else {
+                if (search("student", $mail, $pwd)) {
+                } else if (search("teacher", $mail, $pwd)) {
+                } else {
+                    header("Location: ../sigin.php?error=not");
+                    exit();
+                }
             }
-             
-        
+        } else {
+            header("Location: ../sigin.php?error=sql1&way=" . $submit);
+            exit();
+        }
     }
 } else {
     header("Location: ../sigin.php");

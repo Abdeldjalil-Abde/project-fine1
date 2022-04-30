@@ -158,12 +158,12 @@
         <p class="p2"> يرجى تحديد المواد التي ترغب في دراستها</p><br>
 
         <div>
-          <select class="model" name="teacher" placeholder="enter text" id="">
+          <select class="model" name="class" placeholder="enter text" id="">
             <option value="none"></option>
-            <option value="teacher1"> الشيخ محمد الأزهر</option>
-            <option value="teacher2">الشيخ حسن رحموني  </option>
-            <option value="teacher3"> الأستاذ مراد الفقي</option>
-            <option value="teacher4"> المعلمة مريم قدوري </option>
+            <option value="1"> الشيخ محمد الأزهر</option>
+            <option value="2">الشيخ حسن رحموني  </option>
+            <option value="3"> الأستاذ مراد الفقي</option>
+            <option value="4"> المعلمة مريم قدوري </option>
           </select>
         </div>
         <button class="submit" type="submit" name="submit">تسجيل </button>

@@ -99,7 +99,7 @@ form{
   position: absolute;
   border: 2px #111 solid;
   border-color: #111 #c9eb08  #c9eb08 ;
-  top: 75%;
+  top: 49%;
   right: 53%;
   z-index: 3;
 }
@@ -110,15 +110,14 @@ form{
   z-index: 2;
   position: absolute;
   top:-33%;
-  right: 30%;
-  
+  right: 35%;
 }
 .hezb .rejcter::before{
   content: "";
   width: 170%;
   height: 20%;
   background-color:#c9eb08;
-  right: -11.5%;
+  right: -26.5%;
   top:255%;
   z-index: -1;
   position: absolute;

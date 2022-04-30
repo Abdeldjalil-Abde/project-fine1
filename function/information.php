@@ -1,11 +1,12 @@
 <?php
 session_start();
 
-function serch($class, $mail)
+function search($class, $mail)
 {
     require 'databaes-connect.php';
 
-    $sql1 = "SELECT * FROM $class WHERE mail = ?";
+    $sql1 = "SELECT *, class.name_class FROM $class ,class WHERE mail = ? AND class.id = id_class ";
+
     $stmt1 = mysqli_stmt_init($conn);
     if (mysqli_stmt_prepare($stmt1, $sql1)) {
         mysqli_stmt_bind_param($stmt1, "s", $mail);
@@ -19,10 +20,8 @@ function serch($class, $mail)
             $first = $row['first_name'];
             $last = $row['last_name'];
             $dat =  $row['dat'];
-            if($class == "teacher"){
-            $id = $row['id'];
-            }
-            header("Location: ../html/profile-admin.php?first_uesr=" . $first ."&last_uesr=" . $last ."&dat_uesr=" . $dat ."&class=" . $class ."&id=" .$id);
+            $name_class = $row['name_class'];
+            header("Location: ../html/profile-admin.php?first_uesr=" . $first . "&last_uesr=" . $last . "&dat_uesr=" . $dat . "&name_class=" . $name_class . "&class=" . $class);
             exit();
         } else {
             return 0;
@@ -36,21 +35,20 @@ function serch($class, $mail)
 
 if (isset($_POST['submit'])) {
     $mail_student = $_POST['mail'];
-    $id = $_SESSION["id"];
+    $id = $_SESSION["id_class"];
     require 'databaes-connect.php';
     $sql = "";
-    
+
     if (!filter_var($mail_student, FILTER_VALIDATE_EMAIL)) {
 
         header("Location: ../html/profile-teacher.php?error=mail");
         exit();
     } else {
-            $teacher = "teacher" . $id; 
-            $sql = "SELECT * FROM $teacher WHERE mail = ? ;";
-        
+        $sql = "SELECT s.* FROM student s,class c WHERE  mail = ? AND s.id_class = ?  ";
+
         $stmt = mysqli_stmt_init($conn);
         if (mysqli_stmt_prepare($stmt, $sql)) {
-            mysqli_stmt_bind_param($stmt, "s", $mail_student);
+            mysqli_stmt_bind_param($stmt, "ss", $mail_student, $id);
             mysqli_stmt_execute($stmt);
 
             $result = mysqli_stmt_get_result($stmt);
@@ -62,7 +60,7 @@ if (isset($_POST['submit'])) {
                 $last = $row['last_name'];
                 $dat  = $row['dat'];
                 $mail = $row['mail'];
-                header("Location: ../html/profile-teacher.php?first_student=" . $first . "&last_student=" . $last ."&dat_student=" . $dat);
+                header("Location: ../html/profile-teacher.php?first_student=" . $first . "&last_student=" . $last . "&dat_student=" . $dat);
                 exit();
             } else {
                 header("Location: ../html/profile-teacher.php?error=not");
@@ -81,14 +79,9 @@ if (isset($_POST['submit'])) {
         header("Location: ../html/profile-admin.php");
         exit();
     } else {
-
-        $sql = "";
-
-        if (serch("teacher1", $mail_uesr)) {
-        } else if (serch("teacher2", $mail_uesr)) {
-        } else if (serch("teacher3", $mail_uesr)) {
-        } else if (serch("teacher4", $mail_uesr)) {
-        } else if (serch("teacher", $mail_uesr)) {
+          
+        if (search("student", $mail_uesr)) {
+        } else if (search("teacher", $mail_uesr)) {
         } else {
             header("Location: ../html/profile-admin.php?error=not");
             exit();

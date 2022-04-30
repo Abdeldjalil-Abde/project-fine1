@@ -30,12 +30,13 @@ if(!isset($_SESSION['first_name'])){
       </div>
     </div>
     <?php
-    function number_column($id)
+    function number_column()
     {
       require '../function/databaes-connect.php';
 
-      $teble = "teacher" . $id;
-      $sql = "SELECT * FROM $teble";
+      $id = $_SESSION['id_class'];
+      $sql = "SELECT s.* FROM student s WHERE  s.id_class = $id ";
+
       $stmt = mysqli_stmt_init($conn);
       if (mysqli_stmt_prepare($stmt, $sql)) {
         mysqli_stmt_execute($stmt);
@@ -96,9 +97,9 @@ if(!isset($_SESSION['first_name'])){
       <div class="students">
         <div class="student"> الطلاب </div>
         <div class="numberStudent"> عدد الطلاب في المادة :
-          <span> <?php echo number_column($_SESSION['id']); ?> </span>
+          <span> <?php echo number_column(); ?> </span>
         </div>
-        <a class="chang" href="list-student.php?id=<?php echo $_SESSION['id'] ?> "> قائمة الطلاب </a>
+        <a class="chang" href="list-student.php?id=<?php echo $_SESSION['id_class'] ?> "> قائمة الطلاب </a>
       </div>
 
       <div class="searchs">

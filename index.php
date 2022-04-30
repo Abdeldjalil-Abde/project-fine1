@@ -42,7 +42,7 @@
       <div class="btn">
         <div class="modle1">
           <a href="" class="btn1"> تفسير القران </a>
-          <a href="" class="btn1"> حصن المسلم</a>
+          <a href="Accessories/supplement1.php" class="btn1"> حصن المسلم</a>
         </div>
         <div class="modle1">
           <a href="" class="btn1"> احكام التجويد</a>

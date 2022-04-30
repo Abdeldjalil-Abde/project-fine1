@@ -51,9 +51,8 @@ if(!isset($_SESSION['first_name'])){
                     require "../function/databaes-connect.php";
 
                     $sql = "";
-                    $teacher = "teacher".$_SESSION['id'];
-                    
-                        $sql = "SELECT * FROM ".$teacher ;
+                    $id = $_SESSION['id_class'];
+                    $sql = "SELECT s.* FROM student s WHERE  s.id_class = $id ";
 
                     $result = mysqli_query($conn, $sql);
 
@@ -70,16 +69,14 @@ if(!isset($_SESSION['first_name'])){
                         
                         <input type='hidden' name='mail".$n."' required autocomplete='off' value='" . $row['mail'] . "' />
                         <div class='td '>
-                             <input type='number' name='hezb".$n."' required autocomplete='off' value='". $row['hizb'] . "' />
+                             <input type='number' name='hizb".$n."' required autocomplete='off' value='". $row['hizb'] . "' />
                        </div>
                     </div>  ";
                             $n = $n + 1;
                         }
                     }
-                     echo" <input type='hidden' name='number-student' required autocomplete='off' value='" . $n - 1 . "' />";
-                     echo" <input type='hidden' name='id_teacher' required autocomplete='off' value='" . $_SESSION['id'] . "' />";
-                     echo" <input type='hidden' name='first-name' required autocomplete='off' value='" . $_SESSION['first_name'] . "' />";
-
+                     echo" <input type='hidden' name='number_student' required autocomplete='off' value='" . $n - 1 . "' />";
+                     echo" <input type='hidden' name='id_class' required autocomplete='off' value='" . $_SESSION['id_class'] . "' />";
 
                     ?>
                <button class="submit" type="submit" name="submit">حفظ </button>

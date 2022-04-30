@@ -25,7 +25,7 @@ if(!isset($_SESSION['first_name'])){
             </div>
             <div class="list">
                 <a href="../index.php">الصفحة الرئيسية</a>
-                <a href="profile-teacher.php" > <?php echo $_SESSION['first_name'];  ?> </a>
+                <a href="../function/profile.php" > <?php echo $_SESSION['first_name'];  ?> </a>
                 <img src="../imaj/images.png" alt="">
             </div>
         </div>
@@ -43,6 +43,7 @@ if(!isset($_SESSION['first_name'])){
                     <div class="th">القب </div>
                     <div class="th">تاريخ الميلاد </div>
                     <div class="th long">البريد الإلكتروني </div>
+                    <div class="th long">القسم  </div>
                 </div>
                 <form method='POST' action='../function/save.php'>
 
@@ -51,7 +52,7 @@ if(!isset($_SESSION['first_name'])){
 
                     $sql = "";
                     
-                        $sql = "SELECT * FROM active";
+                        $sql = "SELECT *, class.name_class FROM active, class WHERE active.id_class = class.id";
 
                     $result = mysqli_query($conn, $sql);
 
@@ -65,21 +66,14 @@ if(!isset($_SESSION['first_name'])){
                         <div class='td'>" . $row['last_name'] . "</div>
                         <div class='td'>" . $row['dat'] . "</div>
                         <div class='td long'>" . $row['mail'] . "</div>
-                        <div class='td long'>" . $row['class'] . "</div>
-                        <a class='active' href='../function/active-student.php?mail=" . $row['mail'] . "&class=" . $row['class'] .  "'>تفعيل   </a>
+                        <div class='td long'>" . $row['name_class'] . "</div>
+                        <a class='active' href='../function/active-student.php?mail=" . $row['mail'] . "'>تفعيل   </a>
                          
                     </div>  ";
                             $n = $n + 1;
                         }
                     }
-                     echo" <input type='hidden' name='number-student' required autocomplete='off' value='" . $n - 1 . "' />";
-                     echo" <input type='hidden' name='id_teacher' required autocomplete='off' value='" . $_SESSION['id'] . "' />";
-                     echo" <input type='hidden' name='first-name' required autocomplete='off' value='" . $_SESSION['first_name'] . "' />";
-
-
-                    ?>
-               <button class="submit" type="submit" name="submit">حفظ </button>
-    
+                    ?>    
                 </form>
             </div>
         </center>

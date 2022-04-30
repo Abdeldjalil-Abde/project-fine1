@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
 }
+body{
+padding: 20% 0% 0% 50%;
+
+}
 div {
     width: 100px;
     height: 50px;
@@ -9,18 +13,50 @@ div {
     transition: height 0.5s;
   }
   
-  div:hover~.b,.c:hover~.e  {
+  div:hover~.a2,.a3:hover~.a4  {
     height: 100px;
   }
-  .b{
+  .a2{
   height: 0px;
   background: #000;
   }
-  .c{
+  .a3{
   height: 50px;
   background: rgb(130, 175, 175);
   }
-  .e{
+  .a4{
+  height: 0px;
+  background: rgb(130, 175, 75);
+  }
+  .a5{
+  height: 0px;
+  background: rgb(130, 175, 75);
+  }
+  .a6{
+  height: 0px;
+  background: rgb(130, 175, 75);
+  }
+  .a7{
+  height: 0px;
+  background: rgb(130, 175, 75);
+  }
+  .a8{
+  height: 0px;
+  background: rgb(130, 175, 75);
+  }
+  .a9{
+  height: 0px;
+  background: rgb(130, 175, 75);
+  }
+  .a10{
+  height: 0px;
+  background: rgb(130, 175, 75);
+  }
+  .a11{
+  height: 0px;
+  background: rgb(130, 175, 75);
+  }
+  .a12{
   height: 0px;
   background: rgb(130, 175, 75);
   }
