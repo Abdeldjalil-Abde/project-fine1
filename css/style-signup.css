@@ -153,22 +153,22 @@ form {
 
 }
 
-.txt {
+span {
   position: absolute;
   right: 0px;
   bottom: 0px;
   transition: 1s ease;
 }
 
-.center div input:focus~.lable .txt,
-.center div input:valid~.lable .txt {
+.center div input:focus~label span,
+.center div input:valid~label span {
   transform: translateY(-160%);
   font-size: 90%;
   color: blue;
 }
 
-.center div input:focus+.lable::after,
-.center div input:valid+.lable::after {
+.center div input:focus+label::after,
+.center div input:valid+label::after {
   transform: translateX(0%);
 }
 

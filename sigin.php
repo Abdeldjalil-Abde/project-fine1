@@ -22,21 +22,21 @@
       <main dir="rtl">
       
           <form method="POST" action="function/sign-in.php">
-            <p class="msg">يرجى ملئ المعلومات لتسجيل الدخول</p>
+            <samp>يرجى ملئ المعلومات لتسجيل الدخول</samp>
             <?php
             if (isset($_GET['error'])) {
                     if ($_GET['error'] == "mail") {
-                        echo '<p class="error">البريد الإلكتروني غير صالح اعد كتابته</p>';
+                        echo '<p class="messageError">البريد الإلكتروني غير صالح اعد كتابته</p>';
                     } else if ($_GET['error'] == "not") {
-                        echo '<p class="error"> البريد الإلكتروني غير مسجل </p>';
-                    } else if ($_GET['error'] == "sql1") {
-                        echo '<p class="error">SQL ERROR 1</p>';
+                        echo '<p class="messageError"> البريد الإلكتروني غير مسجل </p>';
+                    } else if($_GET['error'] == 'active'){
+                      echo '<p class="messageError active"> البريد الإلكتروني غير مفعل يرجى التقرب من الإدارة لتفعيل حسابك  </p>';
+                    }else if ($_GET['error'] == "sql1") {
+                        echo '<p class="messageError">SQL ERROR 1</p>';
                     } else if ($_GET['error'] == "sql2") {
-                        echo '<p class="error">SQL ERROR 2</p>';
+                        echo '<p class="messageError">SQL ERROR 2</p>';
                     }
-                } else {
-                    echo '<p class="error"></p>';
-                }
+                 } 
                 ?>
             <div>
                    <?php
@@ -48,14 +48,14 @@
                     echo '<input type="mail" name="mail" required autocomplete="off" value="' . $mail . '">';
                     ?>
 
-              <label class="lable" for="">
-                <span class="txt">البريد الألكتروني</span>
+              <label>
+                <span >البريد الألكتروني</span>
               </label>
             </div>
             <div>
               <input type="password" name="pwd" required autocomplete="off" />
-              <label class="lable" for="">
-                <span class="txt">كلمة السر</span>
+              <label>
+                <span >كلمة السر</span>
               </label>
             </div>
              <button class="submit" type="submit" name="submit">

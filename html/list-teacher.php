@@ -46,7 +46,7 @@ if(!isset($_SESSION['first_name'])){
 
                 $sql = "";
 
-                $sql = "SELECT * FROM teacher;";
+                $sql = "SELECT * FROM teacher WHERE status = 1;";
 
 
                 $result = mysqli_query($conn, $sql);

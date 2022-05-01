@@ -55,7 +55,6 @@ header {
 .list a:hover {
   color: rgb(75, 43, 219);
 }
-
 .list img {
   width: 9%;
   border-radius: 50%;
@@ -63,21 +62,16 @@ header {
   border: 2px rgb(57, 16, 240) solid;
 
 }
-
 main {
   width: 100vw;
   height: 100vh;
   padding-top: 4%;
 }
-
-
-
 h2 {
   font-size: 50px;
   text-align: center;
   margin-bottom: 10px;
 }
-
 form {
     width: 45%;
     margin: 0 auto;
@@ -89,19 +83,21 @@ form {
     align-items: center;
     font-family: sans-serif
 }
-
-.msg {
+form samp {
+  margin: 5% 0% 2%;
   font-size: 200%;
   font-family: cursive;
   color: #000;
 }
-
-.error {
-  font-size: 30px;
+.messageError {
+  font-size: 25px;
   font-family: cursive;
   color: red;
+  text-align: center;
 }
-
+.active{
+  color: rgb(0, 26, 255);
+}
 form div {
   width: 80%;
   height: 60px;
@@ -147,25 +143,24 @@ form div label::after {
   transition: 0.6s ease;
 }
 
-.txt {
+span {
   position: absolute;
   right: 0px;
   bottom: 0px;
   transition: 1s ease;
 }
 
-form div input:focus~.lable .txt,
-form div input:valid~.lable .txt {
+form div input:focus~label span,
+form div input:valid~label span {
   transform: translateY(-160%);
   font-size: 90%;
   color: blue;
 }
 
-form div input:focus+.lable::after,
-form div input:valid+.lable::after {
+form div input:focus+label::after,
+form div input:valid+label::after {
   transform: translateX(0%);
 }
-
 .submit {
   width: 40%;
   height: 60px;
@@ -175,20 +170,4 @@ form div input:valid+.lable::after {
   color: black;
   font-size: 30px;
   font-weight: 700;
-  text-transform: uppercase;
-}
-
-form p {
-  margin-top: 20px;
-  font-size: 20px;
-  color: #000;
-}
-
-.model {
-  width: 250px;
-  border-bottom: 3px solid rgb(3, 162, 173);
-  color: rgb(69, 23, 235);
-  outline: none;
-  font-size: 20px;
-  background: none;
 }

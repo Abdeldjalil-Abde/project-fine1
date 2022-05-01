@@ -70,7 +70,7 @@ if (isset($_POST['submit'])) {
             mysqli_stmt_store_result($stmt);
 
             if (mysqli_num_rows($result) > 0) {
-                  header("Location: ../html/waiting.php");
+                  header("Location: ../sigin.php?error=active");
                     exit();
             } else {
                 if (search("student", $mail, $pwd)) {

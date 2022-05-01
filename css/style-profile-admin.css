@@ -55,71 +55,58 @@
   align-items: center;
   margin-bottom: -6%;
 }
-.account{
-  width: 28%;
-  aspect-ratio: 3/1;
-  background-color: rgba(247, 34, 34, 0.4);
-  border: 2px #000 solid;
-  font-size: 23px;
-  border-radius: 25px;
-  position: absolute;
-  top: 53%;
-  left: 3%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 
-}
-.account a{
-  width: 56%;
-  margin-top: 4%;
-  margin-right: 0%;
-}
-.account span:nth-child(2){
- width: 7.5%;
- aspect-ratio: 1;
- text-align: center;
- font-size: 22px;
- font-weight: 700;
- background-color: #ff0000;
- border-radius: 100%;
- margin-top: 1.5%;
-
-}
-.students{
+.content{
   width: 30%;
-  height: 18%;
+  aspect-ratio: 2/1;
   position: absolute;
   background-color: rgba(247, 34, 34, 0.4);
   border: 2px #111 solid;
   border-radius: 45px;
   top: 68%;
-  right: 68%;
-  z-index: 3;
+  font-size: 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
- .students .chang,.teachers .chang{
-  position: absolute;
-  bottom: 27%;
+.students{
+  left: 2%;
+}
+.teachers{
+  right: 4%; 
+}
+.account{
+  width: 28%;
+  aspect-ratio: 3/1;
+  top: 53%;
+  left: 3%;
+}
+.number{
+  width: 7.5%;
+  aspect-ratio: 1;
   text-align: center;
-  right: 18%;
+  font-size: 30px;
+  font-weight: 700;
+  color: #3700ff;
+  border-radius: 100%;
+  margin-top: 5%;
+ }
+ .account .number{
+  background-color: #ff0000;
+  color: #000;
+  margin-top: 1.5%;
+ 
+ }
+ .content a{
+  width: 56%;
+  margin-top: 7%;
+  margin-right: 0%;
+ }
+ .account a{
+  margin-top: 3%;
 }
 
-.numberStudent span,.numberTeacher span{
-    width: 20%;
-    aspect-ratio: 1;
-    text-align: center;
-    font-size: 30px;
-    font-weight: 700;
-    background-color: #ff0000;
-    border-radius: 100%;
-    margin-top: 1.5%;
-}
-.numberStudent,.numberTeacher{
-  font-size: 25px;
-  margin-top: 7%;
-  margin-right: 10%;
-}
 .student,.teacher{
   font-size: 30px;
   width: 25%;

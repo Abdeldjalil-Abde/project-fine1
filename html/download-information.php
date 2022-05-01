@@ -10,6 +10,16 @@
 </head>
 
 <body>
+   <div class="container">
+      <div class="logo">
+        <img src="../imaj/logo.png" alt="" />
+        <div class="list">
+          <a href="../sigin.php">تسجيل الدخول</a>
+          <a href="../index.php">الصفحة الرئيسية</a>
+        </div>
+      </div>
+    </div>
+    
     <form dir="rtl">
          <samp> مدرسة الفرقان لتعليم القرآن </samp>
          <img class="img" src="../imaj/images.png" alt="">

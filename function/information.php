@@ -20,8 +20,9 @@ function search($class, $mail)
             $first = $row['first_name'];
             $last = $row['last_name'];
             $dat =  $row['dat'];
+            $status = $row['status'];
             $name_class = $row['name_class'];
-            header("Location: ../html/profile-admin.php?first_uesr=" . $first . "&last_uesr=" . $last . "&dat_uesr=" . $dat . "&name_class=" . $name_class . "&class=" . $class);
+            header("Location: ../html/profile-admin.php?first_uesr=" . $first . "&last_uesr=" . $last . "&dat_uesr=" . $dat . "&name_class=" . $name_class . "&status=" . $status);
             exit();
         } else {
             return 0;

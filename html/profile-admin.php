@@ -34,7 +34,13 @@ if (!isset($_SESSION['first_name'])) {
             {
                 require '../function/databaes-connect.php';
 
-                    $sql = "SELECT * FROM $table";
+                    if($table=="active"){
+                        $sql = "SELECT * FROM $table ";
+                    }else if($table=="teacher"){
+                    $sql = "SELECT * FROM $table WHERE status = 1  ";
+                    }else{
+                        $sql = "SELECT * FROM $table WHERE status = 0  ";
+                    }
                     $stmt = mysqli_stmt_init($conn);
                     if (mysqli_stmt_prepare($stmt, $sql)) {
                         mysqli_stmt_execute($stmt);
@@ -45,7 +51,7 @@ if (!isset($_SESSION['first_name'])) {
                         $number_rows = mysqli_num_rows($result);
                         return $number_rows;
                     } else {
-                        header("Location: ../sigin.php?error=sql1&way=" . $submit);
+                         header("Location: ../sigin.php?error=sql1");
                         exit();
                     }
             }
@@ -70,17 +76,16 @@ if (!isset($_SESSION['first_name'])) {
                         </div>
                     </form>
                     <div class="ensmble-list">
-                        <div class="account">
+                        <div class="account content">
                             <span>عدد الحسابات الغير المفعلة : </span>
-                            <span> <?php echo number_column("active");?> </span>
+                            <span class="number"> <?php echo number_column("active");?> </span>
 
                             <a class="chang" href="list-activation.php"> سجل الحسابات </a>
                         </div>
-                        <div class="students">
+                        <div class="students content">
                             <div class="student"> الطلاب </div>
-                            <div class="numberStudent"> عدد الطلاب في المادة :
-                                <span> <?php echo number_column("student");?> </span>
-                            </div>
+                            <span > عدد الطلاب في المادة :</span>
+                            <span class="number"> <?php echo number_column("student");?> </span>
                             <a class="chang" href="list-student-all.php"> قائمة الطلاب </a>
                         </div>
                         <div class="searchs">
@@ -136,44 +141,29 @@ if (!isset($_SESSION['first_name'])) {
                                 <div>
                                     <span> الرتبة :</span>
                                     <?php
-                                    if (isset($_GET['class']))
-                                        if ($_GET['class'] == "teacher") {
-                                            echo "<span class='info'> استاذ </span>";
-                                        } else {
-                                            echo "<span class='info'> طالب  </span>";
+                                    if (isset($_GET['status']))
+                                        if ($_GET['status'] == "1") {
+                                            echo "<span class='info'>استاذ(ة)</span>";
+                                        } else if ($_GET['status'] == "0"){
+                                            echo "<span class='info'> طالب(ة) </span>";
+                                        } else{
+                                            echo "<span class='info'> مدير(ة) </span>";
                                         }
                                     ?>
                                 </div>
                                 <div>
                                     <?php
-                                    if (isset($_GET['class'])) {
-                                        if ($_GET['class'] == "teacher") {
+                                    if (isset($_GET['status'])) {
+                                        if ($_GET['status'] == "1") {
                                             echo "<span> استاذ في القسم : </span>";
-                                        } else {
+                                        } else if ($_GET['status'] == "0"){
                                             echo "<span> يدرس  في القسم : </span>";
-                                        }
+                                        } 
                                     }
                                     ?>
                                     <?php
                                     if (isset($_GET['name_class'])){
-                                        // if ($_GET['class'] == "teacher1") {
-                                        //     echo "<span class='info'> ".$_GET['name_class']." </span>";
-                                        // } else if ($_GET['class'] == "teacher2") {
-                                        //     echo "<span class='info'> الثاني  </span>";
-                                        // } else if ($_GET['class'] == "teacher3") {
-                                        //     echo "<span class='info'> الثالث  </span>";
-                                        // } else if ($_GET['class'] == "teacher4") {
-                                        //     echo "<span class='info'> الرابع  </span>";
-                                        // } else if ($_GET['class'] == "teacher") {
-                                        //     if ($_GET['id'] == "1") {
-                                        //         echo "<span class='info'> الأول </span>";
-                                        //     } else if ($_GET['id'] == "2") {
-                                        //         echo "<span class='info'> الثاني  </span>";
-                                        //     } else if ($_GET['id'] == "3") {
-                                        //         echo "<span class='info'> الثالث  </span>";
-                                        //     } else if ($_GET['id'] == "4") {
-                                        //         echo "<span class='info'> الرابع  </span>";
-                                        //     }
+                                        if($_GET['status'] == "0"||$_GET['status'] == "1")
                                         echo "<span class='info'> ".$_GET['name_class']." </span>";
 
                                         }
@@ -182,12 +172,10 @@ if (!isset($_SESSION['first_name'])) {
                             </div>
 
                         </div>
-                        <div class="teachers">
+                        <div class="teachers content">
                             <div class="teacher"> الأساتذة </div>
-                            <div class="numberTeacher"> عددالأساتذة :
-                                <span> <?php echo number_column("teacher");
-                                        ?> </span>
-                            </div>
+                            <span > عددالأساتذة :</span>
+                            <span class="number"> <?php echo number_column("teacher"); ?> </span>
                             <a class="chang" href="list-teacher.php"> قائمة الأساتذة </a>
                         </div>
                     </div>

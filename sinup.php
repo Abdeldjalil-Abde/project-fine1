@@ -57,8 +57,8 @@
             echo '<input type="text" name="first_name" required autocomplete="off" value="' . $first_name . '"/>';
             ?>
 
-            <label class="lable" for="">
-              <span class="txt">الإسم</span>
+            <label >
+              <span>الإسم</span>
             </label>
           </div>
 
@@ -72,16 +72,16 @@
             echo '<input type="text" name="last_name" required autocomplete="off" value="' . $last_name . '"/>';
             ?>
 
-            <label class="lable" for="">
-              <span class="txt">القب</span>
+            <label >
+              <span>القب</span>
             </label>
           </div>
         </div>
         <div class="gender">
           <p class="p2"> الجنس :</p>
-          <input type="radio" id="male" name="gender" value="ذكر">
+          <input type="radio" id="male" name="gender" required value="ذكر">
           <label for="male">ذكر</label>
-          <input type="radio" id="female" name="gender" value="انثى">
+          <input type="radio" id="female" name="gender" required value="انثى">
           <label for="female">انثى</label>
         </div>
         <div class="center">
@@ -95,8 +95,8 @@
             echo '<input type="text" name="location" required autocomplete="off" value="' . $location . '" />';
             ?>
 
-            <label class="lable" for="">
-              <span class="txt">العنوان</span>
+            <label >
+              <span>العنوان</span>
             </label>
           </div>
           <div>
@@ -109,8 +109,8 @@
             echo '<input  type="date" name="date" required autocomplete="off" value="' . $dat . '" />';
             ?>
 
-            <label class="lable" for="">
-              <span class="txt">تاريخ الميلاد</span>
+            <label >
+              <span>تاريخ الميلاد</span>
             </label>
           </div>
           <div>
@@ -122,8 +122,8 @@
             }
             echo '<input  type="text" name="tel" required autocomplete="off" value="' . $tel . '" />';
             ?>
-            <label class="lable" for="">
-              <span class="txt">رقم الهاتف</span>
+            <label >
+              <span>رقم الهاتف</span>
             </label>
           </div>
           <div>
@@ -136,28 +136,28 @@
             echo '<input type="mail" name="mail" required autocomplete="off" value="' . $mail . '"/>';
             ?>
             
-            <label class="lable" for="">
-              <span class="txt">البريد الإلكتروني</span>
+            <label >
+              <span>البريد الإلكتروني</span>
             </label>
           </div>
 
           <div>
             <input type="password" name="pwd" required autocomplete="off" />
-            <label class="lable">
-              <span class="txt">كلمة السر</span>
+            <label>
+              <span>كلمة السر</span>
             </label>
           </div>
           <div>
             <input type="password" name="pwd-repeat" required autocomplete="off" />
-            <label class="lable">
-              <span class="txt">إعادة كتابة كلمة السر</span>
+            <label>
+              <span>إعادة كتابة كلمة السر</span>
             </label>
           </div>
         </div>
-        <p class="p2"> يرجى تحديد المواد التي ترغب في دراستها</p><br>
+        <p class="p2"> يرجى تحديد المواد التي ترغب في دراستها</p> <br>
 
         <div>
-          <select class="model" name="class" placeholder="enter text" id="">
+          <select class="model" name="class" required placeholder="enter text">
             <option value="none"></option>
             <option value="1"> الشيخ محمد الأزهر</option>
             <option value="2">الشيخ حسن رحموني  </option>
@@ -166,7 +166,6 @@
           </select>
         </div>
         <button class="submit" type="submit" name="submit">تسجيل </button>
-
       </form>
     </main>
   </header>
