@@ -76,16 +76,16 @@ if (isset($_POST['submit'])) {
                 if (search("student", $mail, $pwd)) {
                 } else if (search("teacher", $mail, $pwd)) {
                 } else {
-                    header("Location: ../sigin.php?error=not");
+                     header("Location: ../sigin.php?error=not");
                     exit();
                 }
             }
         } else {
-            header("Location: ../sigin.php?error=sql1&way=" . $submit);
+             header("Location: ../sigin.php?error=sql1");
             exit();
         }
     }
 } else {
-    header("Location: ../sigin.php");
+     header("Location: ../sigin.php");
     exit();
 }

@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if(!isset($_SESSION['first_name'])){
-    header('location:jju.php');
+    header('location:../sigin.php');
 }else{
 ?>
 

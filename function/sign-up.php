@@ -14,22 +14,22 @@ if (isset($_POST['submit'])) {
     $class = $_POST['class'];
 
     if (!preg_match("/^[\p{Arabic}]+$/u", $first)) {
-        header("Location: ../sinup.php?error=first&last_name=" . $last . "&gender=" . $gender . "&location=" . $location . "&dat=" . $date . "&tel=" . $tel . "&mail=" . $mail . "&teacher=" . $teacher);
+        header("Location: ../sinup.php?error=first&last_name=" . $last . "&gender=" . $gender . "&location=" . $location . "&dat=" . $date . "&tel=" . $tel . "&mail=" . $mail . "&class=" . $class);
         exit();
     } else if (!preg_match("/^[\p{Arabic}]+$/u", $last)) {
-        header("Location: ../sinup.php?error=last&first_name=" . $first . "&gender=" . $gender . "&location=" . $location . "&dat=" . $date . "&tel=" . $tel . "&mail=" . $mail . "&teacher=" . $teacher);
+        header("Location: ../sinup.php?error=last&first_name=" . $first . "&gender=" . $gender . "&location=" . $location . "&dat=" . $date . "&tel=" . $tel . "&mail=" . $mail . "&class=" . $class);
         exit();
     } else if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-        header("Location: ../sinup.php?error=mail&first_name=" . $first . "&last_name=" . $last . "&gender=" . $gender . "&location=" . $location . "&dat=" . $date . "&tel=" . $tel . "&teacher=" . $teacher);
+        header("Location: ../sinup.php?error=mail&first_name=" . $first . "&last_name=" . $last . "&gender=" . $gender . "&location=" . $location . "&dat=" . $date . "&tel=" . $tel . "&class=" . $class);
         exit();
     } else if ($pwd !== $pwd_repeat) {
-        header("Location: ../sinup.php?error=pwd&first_name=" . $first . "&last_name=" . $last . "&gender=" . $gender . "&location=" . $location . "&dat=" . $date . "&tel=" . $tel . "&mail=" . $mail . "&teacher=" . $teacher);
+        header("Location: ../sinup.php?error=pwd&first_name=" . $first . "&last_name=" . $last . "&gender=" . $gender . "&location=" . $location . "&dat=" . $date . "&tel=" . $tel . "&mail=" . $mail . "&class=" . $class);
         exit();
     } else if ($class == "none") {
-        header("Location: ../sinup.php?error=none&first_name=" . $first . "&last_name=" . $last . "&gender=" . $gender . "&location=" . $location . "&dat=" . $date . "&tel=" . $tel . "&mail=" . $mail . "&teacher=" . $teacher);
+        header("Location: ../sinup.php?error=none&first_name=" . $first . "&last_name=" . $last . "&gender=" . $gender . "&location=" . $location . "&dat=" . $date . "&tel=" . $tel . "&mail=" . $mail . "&class=" . $class);
         exit();
     } else if ($gender == "") {
-        header("Location: ../sinup.php?error=gender&first_name=" . $first . "&last_name=" . $last . "&gender=" . $gender . "&location=" . $location . "&dat=" . $date . "&tel=" . $tel . "&mail=" . $mail . "&teacher=" . $teacher);
+        header("Location: ../sinup.php?error=gender&first_name=" . $first . "&last_name=" . $last . "&gender=" . $gender . "&location=" . $location . "&dat=" . $date . "&tel=" . $tel . "&mail=" . $mail . "&class=" . $class);
         exit();
     } else {
         require 'databaes-connect.php';
@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
             $resultCheck = mysqli_stmt_num_rows($stmt);
 
             if ($resultCheck > 0) {
-                header("Location: ../sinup.php?error=mail_exist&first_name=" . $first . "last_name=" . $last . "&gender=" . $gender . "&location=" . $location . "&dat=" . $date . "&tel=" . $tel . "&mail=" . $mail . "&teacher=" . $teacher);
+                header("Location: ../sinup.php?error=mail_exist&first_name=" . $first . "last_name=" . $last . "&gender=" . $gender . "&location=" . $location . "&dat=" . $date . "&tel=" . $tel . "&mail=" . $mail . "&class=" . $class);
                 exit();
             } else {
 
@@ -55,6 +55,8 @@ if (isset($_POST['submit'])) {
                     echo $sql;
                     mysqli_stmt_execute($stmt);
                     header("Location: ../html/waiting.php");
+                    header("Location: ../html/download-information.php?first_name=" . $first . "&last_name=" . $last . "&gender=" . $gender . "&location=" . $location . "&date=" . $date . "&tel=" . $tel . "&mail=" . $mail . "&class=" . $class);
+ 
                     exit();
                 } else {
                     header("Location: ../sinup.php?error=sql2");

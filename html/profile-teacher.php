@@ -1,7 +1,7 @@
 
 <?php session_start();
 if(!isset($_SESSION['first_name'])){
-  header('location:jju.php');
+  header('location:../sigin.php');
 }else{
 ?>
 <!DOCTYPE html>
@@ -72,7 +72,7 @@ if(!isset($_SESSION['first_name'])){
         </div>
         <div>
           <span> العنوان : </span>
-          <?php echo "<span class='info'>" . $_SESSION['adrass'] . "</span>"; ?>
+          <?php echo "<span class='info'>" . $_SESSION['location'] . "</span>"; ?>
         </div>
         <div>
           <span> الجنس : </span>

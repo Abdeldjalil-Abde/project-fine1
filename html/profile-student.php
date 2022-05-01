@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if(!isset($_SESSION['first_name'])){
-  header('location:jju.php');
+  header('location:../sigin.php');
 }else{
 ?>
 <!DOCTYPE html>
@@ -48,7 +48,7 @@ if(!isset($_SESSION['first_name'])){
                   </div>
                   <div>
                   <span> العنوان : </span>
-                  <?php echo "<span class='info'>" . $_SESSION['adrass'] . "</span>"; ?>
+                  <?php echo "<span class='info'>" . $_SESSION['location'] . "</span>"; ?>
                 </div>
                 <div>
                   <span> الجنس : </span>
@@ -70,13 +70,13 @@ if(!isset($_SESSION['first_name'])){
                 <a class="chang" href="change-mot-de-passe.php"> تغير كلمة السر </a>
                 </div>
             </form>
-            <div class="models">
+            <!-- <div class="models">
               <div class="model"> الامواد </div>
               <div class="submodel"> حفظ القرأن الكريم </div>
               <div class="submodel"> احكام التجويد </div>
               <div class="submodel y"> السيرة النبوية </div>
               <div class="submodel y"> الفقه </div>
-            </div>
+            </div> -->
             
             <div class="hezb">
               <div class=" rejcter">الأمحفوظات  </div>

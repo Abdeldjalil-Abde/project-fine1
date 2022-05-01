@@ -1,10 +1,10 @@
 {
 	"folders": [
 		{
-			"path": "."
+			"path": "..\\hosat-test"
 		},
 		{
-			"path": "..\\DAW project"
+			"path": "."
 		}
 	],
 	"settings": {}

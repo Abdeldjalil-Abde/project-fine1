@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -88,12 +87,12 @@
         <div class="center">
           <div>
             <?php
-            if (isset($_GET['adrass'])) {
-              $adrass = $_GET['adrass'];
+            if (isset($_GET['location'])) {
+              $location = $_GET['location'];
             } else {
-              $adrass = "";
+              $location = "";
             }
-            echo '<input type="text" name="adrass" required autocomplete="off" value="' . $adrass . '" />';
+            echo '<input type="text" name="location" required autocomplete="off" value="' . $location . '" />';
             ?>
 
             <label class="lable" for="">
