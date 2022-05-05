@@ -18,8 +18,7 @@ if (!isset($_SESSION['first_name'])) {
     </head>
 
     <body>
-        <header>
-            <div class="container">
+            <header>
                 <div class="logo">
                     <img src="../imaj/logo.png" alt="" />
                 </div>
@@ -28,7 +27,7 @@ if (!isset($_SESSION['first_name'])) {
                     <a href="profile-admin.php"><?php echo  $_SESSION['first_name'];  ?></a>
                     <img src="../imaj/images.png" alt="">
                 </div>
-            </div>
+            </header>
             <div class="listStudent">
                 <span> قائمة الطلاب </span>
                 <a href="profile-admin.php"> رجوع </a>
@@ -69,14 +68,7 @@ if (!isset($_SESSION['first_name'])) {
                                            <div class='td '>" . $row['hizb'] . "</div>
                                            
                                            <a class='delate'  href='../function/delate-student.php?mail=" . $row['mail'] . "&id_class=" . $i .  "' > حذف  </a>
-                                           <div class='confirm'>
-                                           <p> هل انت متأكد من الحذف </p>
-                                           <div>
-                                               <span confirm='yes'> نعم</span>
-                                               <span confirm='no'> لا </span>
-                                           </div>
                                        </div>
-                                    </div>
                                  ";
 
                                 $n = $n + 1;
@@ -95,9 +87,8 @@ if (!isset($_SESSION['first_name'])) {
                     </div>
                 </div>
             </center>
-        </header>
     </body>
-    <script src="../js/confirme.js"> </script>
+    <script src="../js/confirm.js"> </script>
 
     </html>
 <?php } ?>

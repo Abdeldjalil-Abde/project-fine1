@@ -2,35 +2,56 @@
     margin: 0;
     padding: 0;
 }
-body{
-    background-image: url(../imaj/IMG.jpg);
-    background-size: cover;
-    width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-div{
+.ok{
     width: 33%;
     aspect-ratio: 4/1;
-    background-color: aqua;
-    border-radius: 35px;
+    background-color: rgb(22, 150, 150);
+    color: rgb(207, 207, 16);
+     border: 1.5px #000 solid ; 
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: absolute;
+    top:47%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
 }
-div::after{
+.ok::after{
     content: "";
     position: absolute;
     width: 97%;
     aspect-ratio: 4.3/1;
-    border: 2px #fff solid;
-    border-radius: 35px;
+    border: 2px rgb(12, 83, 56) solid;
+    z-index: 1;
+}
+.background{
+    position: absolute;
+    width: 100vw;
+    height: 170vh;
+    background: rgba(41, 39, 39, 0.6);
+}
+button{
+    width: 15%;
+    aspect-ratio: 2/1;
+    margin-top: 4%;
+    border: 2px solid;
+    border-color: rgb(119, 118, 118) rgb(37, 34, 34) rgb(37, 34, 34) rgb(119, 118, 118) ;
+    background-color: rgb(17, 87, 128);
+    z-index: 2;
     
 }
-div h2{
+button:hover{
+    background-color: rgb(21, 107, 156);
+}
+button:active{
+    border-color: rgb(37, 34, 34) rgb(119, 118, 118) rgb(119, 118, 118) rgb(37, 34, 34);
+}
+.ok h2{
     text-align: center;
     font-size: 25px;
+    z-index: 2;
+
 }

@@ -54,9 +54,9 @@ if (isset($_POST['submit'])) {
                 if(mysqli_stmt_prepare($stmt, $sql)) {
                     echo $sql;
                     mysqli_stmt_execute($stmt);
-                    header("Location: ../html/waiting.php");
-                    header("Location: ../html/download-information.php?first_name=" . $first . "&last_name=" . $last . "&gender=" . $gender . "&location=" . $location . "&date=" . $date . "&tel=" . $tel . "&mail=" . $mail . "&class=" . $class);
- 
+                    //  header("Location: ../html/waiting.php");
+                    // header("Location: ../html/download-information.php?first_name=" . $first . "&last_name=" . $last . "&gender=" . $gender . "&location=" . $location . "&date=" . $date . "&tel=" . $tel . "&mail=" . $mail . "&class=" . $class);
+                     header("Location: ../index.php?ok=ok");
                     exit();
                 } else {
                     header("Location: ../sinup.php?error=sql2");

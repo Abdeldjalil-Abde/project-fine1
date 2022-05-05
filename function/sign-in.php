@@ -60,10 +60,10 @@ if (isset($_POST['submit'])) {
     } else {
 
         require 'databaes-connect.php';
-        $sql = "SELECT * FROM active WHERE mail = ?;";
+        $sql = "SELECT * FROM active WHERE mail = ? AND pwd = ?;";
         $stmt = mysqli_stmt_init($conn);
         if (mysqli_stmt_prepare($stmt, $sql)) {
-            mysqli_stmt_bind_param($stmt, "s", $mail);
+            mysqli_stmt_bind_param($stmt, "ss", $mail, $pwd);
             mysqli_stmt_execute($stmt);
 
             $result = mysqli_stmt_get_result($stmt);

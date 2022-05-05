@@ -1,34 +1,32 @@
-
 <?php session_start();
-if(!isset($_SESSION['first_name'])){
+if (!isset($_SESSION['first_name'])) {
   header('location:../sigin.php');
-}else{
+} else {
 ?>
-<!DOCTYPE html>
-<html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الملف الشخصي </title>
-  <link rel="stylesheet" href="../css/style-header.css">
-  <link rel="stylesheet" href="../css/style-profile-teacher.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الملف الشخصي </title>
+    <link rel="stylesheet" href="../css/style-header.css">
+    <link rel="stylesheet" href="../css/style-profile-teacher.css">
+  </head>
 
-<body>
-  <header>
-    <div class="container">
+  <body>
+    <header>
       <div class="logo">
         <img src="../imaj/logo.png" alt="" />
       </div>
       <div class="list">
         <a href="../index.php">الصفحة الرئيسية</a>
         <a href="../logout.php"> تسجيل الخروج </a>
-        <a href="profile-teacher.php" > <?php echo $_SESSION['first_name'];  ?> </a>
+        <a href="profile-teacher.php"> <?php echo $_SESSION['first_name'];  ?> </a>
         <img src="../imaj/images.png" alt="">
       </div>
-    </div>
+    </header>
     <?php
     function number_column()
     {
@@ -52,9 +50,9 @@ if(!isset($_SESSION['first_name'])){
       }
     }
     ?>
-    <div class="overflow">
-      <div class="cercle"></div>
-    </div>
+
+    <div class="information"></div>
+
     <main dir="rtl">
 
       <img class="img" src="../imaj/images.png" alt="">
@@ -126,8 +124,8 @@ if(!isset($_SESSION['first_name'])){
             }
             ?>
             <?php
-      
-              echo ' <button class="submit" type="submit" name="submit"  >بحث</button>';
+
+            echo ' <button class="submit" type="submit" name="submit"  >بحث</button>';
             ?>
           </form>
         </div>
@@ -149,38 +147,37 @@ if(!isset($_SESSION['first_name'])){
             <span>تاريخ الميلاد : </span>
             <?php
             if (isset($_GET['dat_student']))
-              echo "<span class='info'>" .$_GET['dat_student'] . "</span>";
+              echo "<span class='info'>" . $_GET['dat_student'] . "</span>";
             ?>
           </div>
         </div>
     </main>
-  </header>
-  <footer>
-    <div class="links">
-      <div class="links-container">
-        <h3>معلومات الإتصال </h3>
-        <a href="">QuranicSchool@gmail.com</a>
-        <a href="">+213687654321</a>
-        <a href="">+213756781234</a>
+    <footer>
+      <div class="links">
+        <div class="links-container">
+          <h3>معلومات الإتصال </h3>
+          <a href="">QuranicSchool@gmail.com</a>
+          <a href="">+213687654321</a>
+          <a href="">+213756781234</a>
+        </div>
+        <div class="links-container">
+          <h3> مواقع التواصل </h3>
+          <a href="">Facebook</a>
+          <a href="">Instagram</a>
+          <a href="">YouTube</a>
+        </div>
+        <div class="links-container">
+          <h3>العنوان </h3>
+          <a href="https://goo.gl/maps/QGHyfpjcP72wm6Di6">M7F2+XP الجلفة</a>
+        </div>
       </div>
-      <div class="links-container">
-        <h3> مواقع التواصل </h3>
-        <a href="">Facebook</a>
-        <a href="">Instagram</a>
-        <a href="">YouTube</a>
-      </div>
-      <div class="links-container">
-        <h3>العنوان </h3>
-        <a href="https://goo.gl/maps/QGHyfpjcP72wm6Di6">M7F2+XP الجلفة</a>
-      </div>
-    </div>
 
-    <div class="info">
-      Copyright &#169; 2021-2022 focus Technology <br />
-      All Rights Reserved
-    </div>
-  </footer>
-</body>
+      <div class="info">
+        Copyright &#169; 2021-2022 focus Technology <br />
+        All Rights Reserved
+      </div>
+    </footer>
+  </body>
 
-</html>
-<?php }?>
+  </html>
+<?php } ?>

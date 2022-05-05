@@ -8,6 +8,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>مدرسة قرأنية</title>
   <link rel="stylesheet" href="css/style-home.css" />
+  <link rel="stylesheet" href="css/style-waiting.css" />
+  <script type="text/javascript" src="js/jquery-3.6.0.min.js"> </script>
+
+
 
 </head>
 
@@ -36,10 +40,21 @@
       </div>
     </div>
     <div class="teterHeder">
-      <div class=" text">  مدرسة الفرقان لتعليم القراني  </div>
-      <div class="text2 text"> { خَيْرُكُمْ مَنْ تَعَلَمَ القُرآن وَ عَلَمَهُ }  </div>
+      <div class=" text"> مدرسة الفرقان لتعليم القراني </div>
+      <div class="text2 text"> { خَيْرُكُمْ مَنْ تَعَلَمَ القُرآن وَ عَلَمَهُ } </div>
       <div class="Register"><a href="">التسجيل في الدورة</a></div>
+     <?php 
+     if(isset($_GET['ok']))
+     if($_GET['ok'] == "ok") {
+     echo" <div class='ok'>
+        <h2> يرجى الإنتظار او التقرب من المركز لتفعيل حسابك</h2>
+        <button class='active'> موافق </button>
+      </div>
+      <div class='background'></div>";
+     }
+      ?>
       <div class="btn">
+     
         <div class="modle1">
           <a href="" class="btn1"> تفسير القران </a>
           <a href="Accessories/supplement1.php" class="btn1"> حصن المسلم</a>
@@ -76,6 +91,8 @@
       All Rights Reserved
     </div>
   </footer>
+  <script src="js/confirm.js"> </script>
+
 </body>
 
 </html>

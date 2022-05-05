@@ -17,8 +17,7 @@ if (!isset($_SESSION['first_name'])) {
     </head>
 
     <body>
-        <header>
-            <div class="container">
+            <header>
                 <div class="logo">
                     <img src="../imaj/logo.png" alt="" />
                 </div>
@@ -28,37 +27,37 @@ if (!isset($_SESSION['first_name'])) {
                     <a href="profile-admin.php"><?php echo  $_SESSION['first_name'];  ?></a>
                     <img src="../imaj/images.png" alt="">
                 </div>
-            </div>
+            </header>
             <?php
             function number_column($table)
             {
                 require '../function/databaes-connect.php';
 
-                    if($table=="active"){
-                        $sql = "SELECT * FROM $table ";
-                    }else if($table=="teacher"){
+                if ($table == "active") {
+                    $sql = "SELECT * FROM $table ";
+                } else if ($table == "teacher") {
                     $sql = "SELECT * FROM $table WHERE status = 1  ";
-                    }else{
-                        $sql = "SELECT * FROM $table WHERE status = 0  ";
-                    }
-                    $stmt = mysqli_stmt_init($conn);
-                    if (mysqli_stmt_prepare($stmt, $sql)) {
-                        mysqli_stmt_execute($stmt);
+                } else {
+                    $sql = "SELECT * FROM $table WHERE status = 0  ";
+                }
+                $stmt = mysqli_stmt_init($conn);
+                if (mysqli_stmt_prepare($stmt, $sql)) {
+                    mysqli_stmt_execute($stmt);
 
-                        $result = mysqli_stmt_get_result($stmt);
-                        mysqli_stmt_store_result($stmt);
+                    $result = mysqli_stmt_get_result($stmt);
+                    mysqli_stmt_store_result($stmt);
 
-                        $number_rows = mysqli_num_rows($result);
-                        return $number_rows;
-                    } else {
-                         header("Location: ../sigin.php?error=sql1");
-                        exit();
-                    }
+                    $number_rows = mysqli_num_rows($result);
+                    return $number_rows;
+                } else {
+                    header("Location: ../sigin.php?error=sql1");
+                    exit();
+                }
             }
             ?>
-            <div class="overflow">
-                <div class="cercle"></div>
-            </div>
+
+            <div class="information"></div>
+
             <main dir="rtl">
 
                 <img class="img" src="../imaj/images.png" alt="">
@@ -78,14 +77,14 @@ if (!isset($_SESSION['first_name'])) {
                     <div class="ensmble-list">
                         <div class="account content">
                             <span>عدد الحسابات الغير المفعلة : </span>
-                            <span class="number"> <?php echo number_column("active");?> </span>
+                            <span class="number"> <?php echo number_column("active"); ?> </span>
 
                             <a class="chang" href="list-activation.php"> سجل الحسابات </a>
                         </div>
                         <div class="students content">
                             <div class="student"> الطلاب </div>
-                            <span > عدد الطلاب في المادة :</span>
-                            <span class="number"> <?php echo number_column("student");?> </span>
+                            <span> عدد الطلاب في المادة :</span>
+                            <span class="number"> <?php echo number_column("student"); ?> </span>
                             <a class="chang" href="list-student-all.php"> قائمة الطلاب </a>
                         </div>
                         <div class="searchs">
@@ -144,9 +143,9 @@ if (!isset($_SESSION['first_name'])) {
                                     if (isset($_GET['status']))
                                         if ($_GET['status'] == "1") {
                                             echo "<span class='info'>استاذ(ة)</span>";
-                                        } else if ($_GET['status'] == "0"){
+                                        } else if ($_GET['status'] == "0") {
                                             echo "<span class='info'> طالب(ة) </span>";
-                                        } else{
+                                        } else {
                                             echo "<span class='info'> مدير(ة) </span>";
                                         }
                                     ?>
@@ -156,17 +155,16 @@ if (!isset($_SESSION['first_name'])) {
                                     if (isset($_GET['status'])) {
                                         if ($_GET['status'] == "1") {
                                             echo "<span> استاذ في القسم : </span>";
-                                        } else if ($_GET['status'] == "0"){
+                                        } else if ($_GET['status'] == "0") {
                                             echo "<span> يدرس  في القسم : </span>";
-                                        } 
+                                        }
                                     }
                                     ?>
                                     <?php
-                                    if (isset($_GET['name_class'])){
-                                        if($_GET['status'] == "0"||$_GET['status'] == "1")
-                                        echo "<span class='info'> ".$_GET['name_class']." </span>";
-
-                                        }
+                                    if (isset($_GET['name_class'])) {
+                                        if ($_GET['status'] == "0" || $_GET['status'] == "1")
+                                            echo "<span class='info'> " . $_GET['name_class'] . " </span>";
+                                    }
                                     ?>
                                 </div>
                             </div>
@@ -174,13 +172,12 @@ if (!isset($_SESSION['first_name'])) {
                         </div>
                         <div class="teachers content">
                             <div class="teacher"> الأساتذة </div>
-                            <span > عددالأساتذة :</span>
+                            <span> عددالأساتذة :</span>
                             <span class="number"> <?php echo number_column("teacher"); ?> </span>
                             <a class="chang" href="list-teacher.php"> قائمة الأساتذة </a>
                         </div>
                     </div>
             </main>
-        </header>
         <footer>
             <div class="links">
                 <div class="links-container">

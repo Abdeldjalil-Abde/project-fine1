@@ -10,8 +10,9 @@ $('.delate').on("click", function (e) {
     
 });
 $('.test').on("click",function (e){
-    var choice = $(this).attr('confirm');
+    e.preventDefault();
 
+    var choice = $(this).attr('confirm');
     if (choice =='yes') {
         window.location.href = href;
     }
@@ -21,4 +22,16 @@ $('.test').on("click",function (e){
              "top":"-20%"
             });   
     }
+});
+// button waiting active
+$('.active').on("click",function (e){
+    e.preventDefault();
+
+        $(".ok").css({
+             "display": "none"
+            });   
+        $(".background").css({
+             "background": "none"
+            });   
+    
 });

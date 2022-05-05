@@ -16,8 +16,8 @@ if(!isset($_SESSION['first_name'])){
 </head>
 
 <body>
-    <header>
-        <div class="container">
+    
+        <header>
             <div class="logo">
                 <img src="../imaj/logo.png" alt="" />
             </div>
@@ -26,7 +26,7 @@ if(!isset($_SESSION['first_name'])){
                 <a href="profile-admin.php"><?php echo  $_SESSION['first_name'] ;  ?></a>
                 <img src="../imaj/images.png" alt="">
             </div>
-        </div>
+        </header>
         <div class="listStudent">
            <span > قائمة الأساتذة </span>
            <a href="profile-admin.php"> رجوع </a>
@@ -69,7 +69,7 @@ if(!isset($_SESSION['first_name'])){
 
             </div>
         </center>
-    </header>
+    
     
 </body>
 

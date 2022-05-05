@@ -1,65 +1,65 @@
-<?php 
+<?php
 session_start();
-if(!isset($_SESSION['first_name'])){
+if (!isset($_SESSION['first_name'])) {
     header('location:../sigin.php');
-}else{
+} else {
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سجل التفعيل </title>
-    <link rel="stylesheet" href="../css/style-header.css">
-    <link rel="stylesheet" href="../css/style-liste-student.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>سجل التفعيل </title>
+        <link rel="stylesheet" href="../css/style-header.css">
+        <link rel="stylesheet" href="../css/style-liste-student.css">
+    </head>
 
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <img src="../imaj/logo.png" alt="" />
-            </div>
-            <div class="list">
-                <a href="../index.php">الصفحة الرئيسية</a>
-                <a href="../function/profile.php" > <?php echo $_SESSION['first_name'];  ?> </a>
-                <img src="../imaj/images.png" alt="">
-            </div>
-        </div>
-        <div class="listStudent">
-           <span > سجل التفعيل  </span>
-           <a href="profile-admin.php"> رجوع </a>
-        </div>
-        
-        <center>
-            <div dir="rtl">
-
-                <div class="tr">
-                    <div class="th">N</div>
-                    <div class="th">الإسم </div>
-                    <div class="th">القب </div>
-                    <div class="th">تاريخ الميلاد </div>
-                    <div class="th long">البريد الإلكتروني </div>
-                    <div class="th long">القسم  </div>
+    <body>
+        <div class="continue">
+            <header>
+                <div class="logo">
+                    <img src="../imaj/logo.png" alt="" />
                 </div>
-                <form method='POST' action='../function/save.php'>
+                <div class="list">
+                    <a href="../index.php">الصفحة الرئيسية</a>
+                    <a href="../function/profile.php"> <?php echo $_SESSION['first_name'];  ?> </a>
+                    <img src="../imaj/images.png" alt="">
+                </div>
+            </header>
+            <div class="listStudent">
+                <span> سجل التفعيل </span>
+                <a href="profile-admin.php"> رجوع </a>
+            </div>
 
-                    <?php
-                    require "../function/databaes-connect.php";
+            <center>
+                <div dir="rtl">
 
-                    $sql = "";
-                    
+                    <div class="tr">
+                        <div class="th">N</div>
+                        <div class="th">الإسم </div>
+                        <div class="th">القب </div>
+                        <div class="th">تاريخ الميلاد </div>
+                        <div class="th long">البريد الإلكتروني </div>
+                        <div class="th long">القسم </div>
+                    </div>
+                    <form method='POST' action='../function/save.php'>
+
+                        <?php
+                        require "../function/databaes-connect.php";
+
+                        $sql = "";
+
                         $sql = "SELECT *, class.name_class FROM active, class WHERE active.id_class = class.id";
 
-                    $result = mysqli_query($conn, $sql);
+                        $result = mysqli_query($conn, $sql);
 
-                    if (mysqli_num_rows($result) > 0) {
-                        $n = 1;
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo " 
+                        if (mysqli_num_rows($result) > 0) {
+                            $n = 1;
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo " 
                     <div class='tr'>
                         <div class='td'>" . $n . "</div>
                         <div class='td'>" . $row['first_name'] . "</div>
@@ -70,15 +70,15 @@ if(!isset($_SESSION['first_name'])){
                         <a class='active' href='../function/active-student.php?mail=" . $row['mail'] . "'>تفعيل   </a>
                          
                     </div>  ";
-                            $n = $n + 1;
+                                $n = $n + 1;
+                            }
                         }
-                    }
-                    ?>    
-                </form>
-            </div>
-        </center>
-    </header>
-</body>
+                        ?>
+                    </form>
+                </div>
+            </center>
+        </div>
+    </body>
 
-</html>
+    </html>
 <?php } ?>

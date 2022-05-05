@@ -1,4 +1,9 @@
 
+.information{
+  background: linear-gradient(0deg, #02123e, #31a16f);
+  height: 123%;
+  top: 47%;
+}
 main {
   height: 150vh;
 }
@@ -83,7 +88,7 @@ form{
   content: "";
   width: 100%;
   height: 12%;
-  background-color:#c9eb08;
+  background-color:transparent;
   right: -10%;
   top:43%;
   z-index: -1;
@@ -94,8 +99,6 @@ form{
   width: 30%;
   height: 7%;
   position: absolute;
-  border: 2px #111 solid;
-  border-color: #111 #c9eb08  #c9eb08 ;
   top: 49%;
   right: 53%;
   z-index: 3;
@@ -111,10 +114,20 @@ form{
 }
 .hezb .rejcter::before{
   content: "";
-  width: 170%;
-  height: 20%;
-  background-color:#c9eb08;
-  right: -26.5%;
+  width: 100%;
+  border: 2px #111 solid; 
+  border-color: #111 transparent  transparent ;
+  right: 140%;
+  top:255%;
+  z-index: -1;
+  position: absolute;
+}
+.hezb .rejcter::after{
+  content: "";
+  width: 100%;
+   border: 2px #111 solid; 
+  border-color: #111 transparent  transparent ;
+  left: 130%;
   top:255%;
   z-index: -1;
   position: absolute;

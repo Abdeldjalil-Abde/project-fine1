@@ -1,7 +1,6 @@
 <?php
 session_start();
 $mail = $_GET['mail'];
-echo $mail;
 require 'databaes-connect.php';
 $sql = "";
 $sql = "SELECT * FROM active WHERE mail = ?;";
@@ -16,7 +15,7 @@ if (mysqli_stmt_prepare($stmt, $sql)) {
         $first = $row['first_name'];
         $last = $row['last_name'];
         $gender = $row['gender'];
-        $adrass = $row['adress'];
+        $location = $row['location'];
         $dat =  $row['dat'];
         $tel =  $row['tel'];
         $hizb = $row['hizb'];
@@ -25,7 +24,7 @@ if (mysqli_stmt_prepare($stmt, $sql)) {
         header("Location: ../html/list-activation.php?error=sql2");
         exit();
     }
-    $sql = "INSERT INTO  student (first_name, last_name,  gender, adress,  dat, tel, mail, pwd, hizb, id_class ) VALUES ('$first', '$last','$gender','$adrass','$date', '$tel', '$mail', '$pwd', 0, '$id_class');";
+    $sql = "INSERT INTO  student (first_name, last_name,  gender, location,  dat, tel, mail, pwd, hizb, id_class ) VALUES ('$first', '$last','$gender','$location','$dat', '$tel', '$mail', '$pwd', 0, '$id_class');";
     $stmt = mysqli_stmt_init($conn);
     if (mysqli_stmt_prepare($stmt, $sql)) {
         mysqli_stmt_execute($stmt);
@@ -37,11 +36,11 @@ if (mysqli_stmt_prepare($stmt, $sql)) {
             mysqli_stmt_execute($stmt);
             header("Location: ../html/list-activation.php");
         } else {
-            echo "<h1>error SQL</h1>";
+            echo "<h1>error SQL 1</h1>";
         }
         header("Location: ../html/list-activation.php");
     } else {
-        echo "<h1>error SQL</h1>";
+        echo "<h1>error SQL 2</h1>";
     }
 } else {
     header("Location: ../html/list-activation.php?error=sql1");
