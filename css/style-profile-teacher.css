@@ -245,6 +245,9 @@ form .error{
   font-size: 20px;
   z-index: 4;
 }
+form .excite{
+  color: rgb(0, 26, 255);
+}
 body > footer {
   width: 100%;
   height: 44vh;

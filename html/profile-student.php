@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['first_name'])) {
-  header('location:../sigin.php');
+  header('location:../signin.php');
 } else {
 ?>
   <!DOCTYPE html>
@@ -68,7 +68,7 @@ if (!isset($_SESSION['first_name'])) {
           <div>
             <span>كلمة السر : </span>
             <?php echo "<span class='info'>" . $_SESSION['pwd'] . "</span>"; ?>
-            <a class="chang" href="change-mot-de-passe.php"> تغير كلمة السر </a>
+            <a class="chang" href="change_password.php"> تغير كلمة السر </a>
           </div>
         </form>
 

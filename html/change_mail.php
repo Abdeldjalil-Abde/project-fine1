@@ -1,6 +1,6 @@
-<?php session_start(); 
+<?php session_start();
 if(!isset($_SESSION['first_name'])){
-  header('location:../sigin.php');
+  header('location:../signin.php');
 }else{
 ?>
 <!DOCTYPE html>
@@ -10,9 +10,8 @@ if(!isset($_SESSION['first_name'])){
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>تغيير كلمة السر</title>
-  <link rel="stylesheet" href="../css/style-sigin.css" />
-
+  <title>تغيير البريد الإلكتروني </title>
+  <link rel="stylesheet" href="../css/style-signin.css" />
 </head>
 
 <body>
@@ -35,7 +34,7 @@ if(!isset($_SESSION['first_name'])){
     <main dir="rtl">
 
       <form method="POST" action="../function/changemet.php">
-        <p class="msg">يرجى ملئ المعلومات لتغيير كلمة السر </p>
+        <samp>يرجى ملئ المعلومات لتغيير البريد الإلكتروني </samp>
         <?php
         if (isset($_GET['error'])) {
           if ($_GET['error'] == "mail") {
@@ -61,23 +60,30 @@ if(!isset($_SESSION['first_name'])){
           echo '<input type="mail" name="mail" required autocomplete="off" value="' . $mail . '">';
           ?>
 
-          <label class="lable" for="">
-            <span class="txt">البريد الألكتروني</span>
+          <label class="lable">
+            <span class="txt">البريد الألكتروني الحالي </span>
+          </label>
+        </div>
+        <div>
+          <?php
+          if (isset($_GET['new_mail'])) {
+            $new_mail = $_GET['new_mail'];
+          } else {
+            $new_mail = "";
+          }
+          echo '<input type="mail" name="nouveau_mail" required autocomplete="off" value="' . $new_mail . '">';
+          ?>
+          <label class="lable">
+            <span class="txt">البريد الإلكتروني الجديد </span>
           </label>
         </div>
         <div>
           <input type="password" name="pwd" required autocomplete="off" />
           <label class="lable" for="">
-            <span class="txt">كلمة السر الحالية </span>
+            <span class="txt">كلمة السر </span>
           </label>
         </div>
-        <div>
-          <input type="password" name="nouveau_pwd" required autocomplete="off" />
-          <label class="lable" for="">
-            <span class="txt">كلمة السر الجديدة </span>
-          </label>
-        </div>
-        <button class="submit" name="change-pwd" type="submit">
+        <button class="submit" name="change-mail" type="submit">
           تأكيد
         </button>
       </form>
@@ -86,4 +92,4 @@ if(!isset($_SESSION['first_name'])){
 </body>
 
 </html>
-<?php }?>
+<?php  }?>

@@ -11,7 +11,7 @@ if (!isset($_SESSION['first_name'])) {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>قائمة الطلبة </title>
-        <link rel="stylesheet" href="../css/style-liste-student.css">
+        <link rel="stylesheet" href="../css/style-list-student.css">
         <link rel="stylesheet" href="../css/style-header.css">
         <script type="text/javascript" src="../js/jquery-3.6.0.min.js"> </script>
 
@@ -78,6 +78,14 @@ if (!isset($_SESSION['first_name'])) {
                         }
                     }
                     ?>
+                    <!-- <div class="confirm">
+                        <p> هل انت متأكد من الحذف </p>
+                        <div>
+                            <span class="test" confirm="yes"> نعم</span>
+                            <span class="test" confirm="no"> لا </span>
+                        </div>
+                        <p class='background'></p>
+                    </div> -->
                     <div class="confirm">
                         <p> هل انت متأكد من الحذف </p>
                         <div>
@@ -85,6 +93,8 @@ if (!isset($_SESSION['first_name'])) {
                             <span class="test" confirm="no"> لا </span>
                         </div>
                     </div>
+                    <div class='background'></div>
+                    
                 </div>
             </center>
     </body>

@@ -101,14 +101,13 @@
           </div>
           <div>
             <?php
-            if (isset($_GET['dat'])) {
-              $dat = $_GET['dat'];
+            if (isset($_GET['date'])) {
+              $date = $_GET['date'];
             } else {
-              $dat = "";
+              $date = "";
             }
-            echo '<input  type="date" name="date" required autocomplete="off" value="' . $dat . '" />';
+            echo '<input  type="date" name="date" required autocomplete="off" value="' . $date . '" />';
             ?>
-
             <label >
               <span>تاريخ الميلاد</span>
             </label>
@@ -148,7 +147,7 @@
             </label>
           </div>
           <div>
-            <input type="password" name="pwd-repeat" required autocomplete="off" />
+            <input type="password" name="pwd_repeat" required autocomplete="off" />
             <label>
               <span>إعادة كتابة كلمة السر</span>
             </label>
@@ -157,7 +156,7 @@
         <p class="p2"> يرجى تحديد المواد التي ترغب في دراستها</p> <br>
 
         <div>
-          <select class="model" name="class" required placeholder="enter text">
+          <select class="model" name="class" required >
             <option value="none"></option>
             <option value="1"> الشيخ محمد الأزهر</option>
             <option value="2">الشيخ حسن رحموني  </option>

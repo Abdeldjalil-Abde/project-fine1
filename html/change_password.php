@@ -1,6 +1,6 @@
-<?php session_start();
+<?php session_start(); 
 if(!isset($_SESSION['first_name'])){
-  header('location:../sigin.php');
+  header('location:../signin.php');
 }else{
 ?>
 <!DOCTYPE html>
@@ -10,8 +10,9 @@ if(!isset($_SESSION['first_name'])){
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>تغيير البريد الإلكتروني </title>
-  <link rel="stylesheet" href="../css/style-sigin.css" />
+  <title>تغيير كلمة السر</title>
+  <link rel="stylesheet" href="../css/style-signin.css" />
+
 </head>
 
 <body>
@@ -34,20 +35,20 @@ if(!isset($_SESSION['first_name'])){
     <main dir="rtl">
 
       <form method="POST" action="../function/changemet.php">
-        <p class="msg">يرجى ملئ المعلومات لتغيير البريد الإلكتروني </p>
+        <samp >يرجى ملئ المعلومات لتغيير كلمة السر </samp>
         <?php
         if (isset($_GET['error'])) {
           if ($_GET['error'] == "mail") {
-            echo '<p class="error">البريد الإلكتروني غير صالح اعد كتابته</p>';
+            echo '<p class="messageError">البريد الإلكتروني غير صالح اعد كتابته</p>';
           } else if ($_GET['error'] == "not") {
-            echo '<p class="error"> البريد الإلكتروني غير مسجل </p>';
+            echo '<p class="messageError"> البريد الإلكتروني غير مسجل </p>';
           } else if ($_GET['error'] == "sql1") {
-            echo '<p class="error">SQL ERROR 1</p>';
+            echo '<p class="messageError">SQL ERROR 1</p>';
           } else if ($_GET['error'] == "sql2") {
-            echo '<p class="error">SQL ERROR 2</p>';
+            echo '<p class="messageError">SQL ERROR 2</p>';
           }
         } else {
-          echo '<p class="error"></p>';
+          echo '<p class="messageError"></p>';
         }
         ?>
         <div>
@@ -61,29 +62,22 @@ if(!isset($_SESSION['first_name'])){
           ?>
 
           <label class="lable" for="">
-            <span class="txt">البريد الألكتروني الحالي </span>
-          </label>
-        </div>
-        <div>
-          <?php
-          if (isset($_GET['nuoveau_mail'])) {
-            $nuoveau_mail = $_GET['nuoveau_mail'];
-          } else {
-            $nuoveau_mail = "";
-          }
-          echo '<input type="mail" name="nouveau_mail" required autocomplete="off" value="' . $nuoveau_mail . '">';
-          ?>
-          <label class="lable" for="">
-            <span class="txt">البريد الإلكتروني الجديد </span>
+            <span class="txt">البريد الألكتروني</span>
           </label>
         </div>
         <div>
           <input type="password" name="pwd" required autocomplete="off" />
           <label class="lable" for="">
-            <span class="txt">كلمة السر </span>
+            <span class="txt">كلمة السر الحالية </span>
           </label>
         </div>
-        <button class="submit" name="change-mail" type="submit">
+        <div>
+          <input type="password" name="new_pwd" required autocomplete="off" />
+          <label class="lable" for="">
+            <span class="txt">كلمة السر الجديدة </span>
+          </label>
+        </div>
+        <button class="submit" name="change-pwd" type="submit">
           تأكيد
         </button>
       </form>
@@ -92,4 +86,4 @@ if(!isset($_SESSION['first_name'])){
 </body>
 
 </html>
-<?php  }?>
+<?php }?>

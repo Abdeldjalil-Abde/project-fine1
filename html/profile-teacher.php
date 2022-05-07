@@ -1,6 +1,6 @@
 <?php session_start();
 if (!isset($_SESSION['first_name'])) {
-  header('location:../sigin.php');
+  header('location:../signin.php');
 } else {
 ?>
   <!DOCTYPE html>
@@ -89,7 +89,7 @@ if (!isset($_SESSION['first_name'])) {
         <div>
           <span>كلمة السر : </span>
           <?php echo "<span class='info'>" . $_SESSION['pwd'] . "</span>"; ?>
-          <a class="chang" href="change-mot-de-passe.php"> تغير كلمة السر </a>
+          <a class="chang" href="change_password.php"> تغير كلمة السر </a>
         </div>
       </form>
       <div class="students">
@@ -97,7 +97,7 @@ if (!isset($_SESSION['first_name'])) {
         <div class="numberStudent"> عدد الطلاب في المادة :
           <span> <?php echo number_column(); ?> </span>
         </div>
-        <a class="chang" href="list-student.php?id=<?php echo $_SESSION['id_class'] ?> "> قائمة الطلاب </a>
+        <a class="chang" href="list-student.php"> قائمة الطلاب </a>
       </div>
 
       <div class="searchs">
@@ -117,7 +117,7 @@ if (!isset($_SESSION['first_name'])) {
               if ($_GET['error'] == "mail") {
                 echo '<p class="error">البريد الإلكتروني غير صالح اعد كتابته</p>';
               } else if ($_GET['error'] == "not") {
-                echo '<p class="error">  البريد الإلكتروني غير مسجل  </p>';
+                echo '<p class="error excite">  البريد الإلكتروني غير موجود  </p>';
               } else if ($_GET['error'] == "sql1") {
                 echo '<p class="error">SQL ERROR 1</p>';
               }

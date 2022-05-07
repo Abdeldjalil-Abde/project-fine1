@@ -1,6 +1,6 @@
 <?php session_start();
 if (!isset($_SESSION['first_name'])) {
-    header('location:../sigin.php');
+    header('location:../signin.php');
 } else {
 ?>
     <!DOCTYPE html>
@@ -50,7 +50,7 @@ if (!isset($_SESSION['first_name'])) {
                     $number_rows = mysqli_num_rows($result);
                     return $number_rows;
                 } else {
-                    header("Location: ../sigin.php?error=sql1");
+                    header("Location: ../signin.php?error=sql1");
                     exit();
                 }
             }
@@ -66,12 +66,12 @@ if (!isset($_SESSION['first_name'])) {
                         <div>
                             <span>البريد الإلكتروني :</span>
                             <?php echo "<span class='info'>" . $_SESSION['mail'] . "</span>"; ?>
-                            <a class="chang" href="change-mail.php"> تغيير البريد الإلكتروني </a>
+                            <a class="chang" href="change_mail.php"> تغيير البريد الإلكتروني </a>
                         </div>
                         <div>
                             <span>كلمة السر : </span>
                             <?php echo "<span class='info'>" . $_SESSION['pwd'] . "</span>"; ?>
-                            <a class="chang" href="change-mot-de-passe.php"> تغير كلمة السر </a>
+                            <a class="chang" href="change_password.php"> تغير كلمة السر </a>
                         </div>
                     </form>
                     <div class="ensmble-list">

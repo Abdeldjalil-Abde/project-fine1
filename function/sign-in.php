@@ -43,7 +43,7 @@ function search($class, $mail, $pwd)
         }
     } else {
 
-         header("Location: ../sigin.php?error=sql1");
+         header("Location: ../signin.php?error=sql1");
         exit();
     }
 }
@@ -55,7 +55,7 @@ if (isset($_POST['submit'])) {
     $pwd = $_POST['pwd'];
 
     if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-        header("Location: ../sigin.php?error=mail&mail=" . $mail);
+        header("Location: ../signin.php?error=mail&mail=" . $mail);
         exit();
     } else {
 
@@ -70,22 +70,22 @@ if (isset($_POST['submit'])) {
             mysqli_stmt_store_result($stmt);
 
             if (mysqli_num_rows($result) > 0) {
-                  header("Location: ../sigin.php?error=active");
+                  header("Location: ../signin.php?error=active");
                     exit();
             } else {
                 if (search("student", $mail, $pwd)) {
                 } else if (search("teacher", $mail, $pwd)) {
                 } else {
-                     header("Location: ../sigin.php?error=not");
+                     header("Location: ../signin.php?error=not");
                     exit();
                 }
             }
         } else {
-             header("Location: ../sigin.php?error=sql1");
+             header("Location: ../signin.php?error=sql1");
             exit();
         }
     }
 } else {
-     header("Location: ../sigin.php");
+     header("Location: ../signin.php");
     exit();
 }

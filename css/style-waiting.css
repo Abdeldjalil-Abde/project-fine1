@@ -55,3 +55,20 @@ button:active{
     z-index: 2;
 
 }
+.confirm{
+    width: 33%;
+    aspect-ratio: 4/1;
+    background-color: rgb(22, 150, 150);
+    color: rgb(207, 207, 16);
+     border: 1.5px #000 solid ; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:47%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+}

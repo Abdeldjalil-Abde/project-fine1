@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>تسجيل الدخول</title>
-    <link rel="stylesheet" href="css/style-sigin.css" />
+    <link rel="stylesheet" href="css/style-signin.css" />
   </head>
   <body >
     <header>
@@ -14,7 +14,7 @@
           <img src="imaj/logo.png" alt="" />
           <div class="list">
           <a href="index.php">الصفحة الرئيسية</a>
-            <a href="sinup.php">تسجيل حساب جديد</a>
+            <a href="signup.php">تسجيل حساب جديد</a>
           
           </div>
         </div>

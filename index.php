@@ -10,62 +10,58 @@
   <link rel="stylesheet" href="css/style-home.css" />
   <link rel="stylesheet" href="css/style-waiting.css" />
   <script type="text/javascript" src="js/jquery-3.6.0.min.js"> </script>
-
-
-
 </head>
 
 <body>
   <header>
-    <div class="container">
-      <div class="logo">
-        <img src="imaj/logo.png" alt="" />
-      </div>
-      <div class="list">
-        <?php
-        if (isset($_SESSION['first_name'])) {
-          echo "
-            <a href='index.php'>الصفحة الرئيسية</a>
-            <a href='logout.php'>تسجيل الخروج </a>
-            <a href='function/profile.php'>" . $_SESSION['first_name'] . "</a>
-            <img src='imaj/images.png' >";
-        } else {
-          echo
-          "
-          <a href='index.php'>الصفحة الرئيسية</a>
-          <a href='sigin.php'>تسجيل الدخول</a>
-          <a href='sinup.php'>تسجيل حساب جديد</a> ";
-        }
-        ?>
-      </div>
+    <div class="logo">
+      <img src="imaj/logo.png" alt="" />
     </div>
-    <div class="teterHeder">
-      <div class=" text"> مدرسة الفرقان لتعليم القراني </div>
-      <div class="text2 text"> { خَيْرُكُمْ مَنْ تَعَلَمَ القُرآن وَ عَلَمَهُ } </div>
-      <div class="Register"><a href="">التسجيل في الدورة</a></div>
-     <?php 
-     if(isset($_GET['ok']))
-     if($_GET['ok'] == "ok") {
-     echo" <div class='ok'>
+    <div class="list">
+      <?php
+      if (isset($_SESSION['first_name'])) {
+        echo "
+        <a href='index.php'>الصفحة الرئيسية</a>
+        <a href='logout.php'>تسجيل الخروج </a>
+        <a href='function/profile.php'>" . $_SESSION['first_name'] . "</a>
+        <img src='imaj/images.png' >";
+      } else {
+        echo
+        "
+          
+        <a href='signup.php'>تسجيل حساب جديد</a> 
+        <a href='signin.php'>تسجيل الدخول</a>
+          <a href='index.php'>الصفحة الرئيسية</a>";
+      }
+      ?>
+    </div>
+  </header>
+  <section>
+    <div class=" text"> مدرسة الفرقان لتعليم القراني </div>
+    <div class="text2 text"> { خَيْرُكُمْ مَنْ تَعَلَمَ القُرآن وَ عَلَمَهُ } </div>
+    <?php
+    if (isset($_GET['ok'])){
+        echo " <div class='ok'>
         <h2> يرجى الإنتظار او التقرب من المركز لتفعيل حسابك</h2>
         <button class='active'> موافق </button>
       </div>
       <div class='background'></div>";
-     }
-      ?>
-      <div class="btn">
-     
-        <div class="modle1">
-          <a href="" class="btn1"> تفسير القران </a>
-          <a href="Accessories/supplement1.php" class="btn1"> حصن المسلم</a>
-        </div>
-        <div class="modle1">
-          <a href="" class="btn1"> احكام التجويد</a>
-          <a href="" class="btn1">الفقه</a>
-        </div>
+      }
+    ?>
+    <div>
+       <div class="Accessories Register">
+        <a href="signup.php">التسجيل في الدورة</a>
+      </div>
+      <div class="Accessories">
+        <a href="" > تفسير القران </a>
+        <a href="Accessories/supplement1.php"> حصن المسلم</a>
+      </div>
+      <div class="Accessories">
+        <a href=""> احكام التجويد</a>
+        <a href="">الفقه</a>
       </div>
     </div>
-  </header>
+  </section>
   <footer>
     <div class="links">
       <div class="links-container">
