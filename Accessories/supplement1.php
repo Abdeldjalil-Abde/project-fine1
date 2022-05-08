@@ -26,8 +26,8 @@
           echo
           "
           <a href='../index.php'>الصفحة الرئيسية</a>
-          <a href='../sigin.php'>تسجيل الدخول</a>
-          <a href='../sinup.php'>تسجيل حساب جديد</a> ";
+          <a href='../signin.php'>تسجيل الدخول</a>
+          <a href='../signup.php'>تسجيل حساب جديد</a> ";
         }
         ?>
       </div>

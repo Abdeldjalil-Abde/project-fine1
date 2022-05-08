@@ -76,12 +76,19 @@ section {
 .text2 {
   font-size: 35px;
   color: #000;
-  margin-bottom: 4%;
+  margin-bottom: 3%;
 }
-
+.content{
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .Accessories {
-  height: 90px;
-  width: 500px;
+  height: 50%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;

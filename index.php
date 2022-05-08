@@ -48,7 +48,7 @@
       <div class='background'></div>";
       }
     ?>
-    <div>
+    <div  class="content">
        <div class="Accessories Register">
         <a href="signup.php">التسجيل في الدورة</a>
       </div>
