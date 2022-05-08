@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,7 +15,7 @@
       <div class="logo">
         <img src="imaj/logo.png" alt="" />
         <div class="list">
-          <a href="sigin.php">تسجيل الدخول</a>
+          <a href="signin.php">تسجيل الدخول</a>
           <a href="index.php">الصفحة الرئيسية</a>
         </div>
       </div>
@@ -22,32 +23,34 @@
     <main dir="rtl">
 
       <form method="POST" action="function/sign-up.php">
-        <div class="center">
-          <p class="p1"> يرجى ملئ معلومات استمارة لنخراط في المدرسة</p>
-          <?php
+      <p class="p1"> يرجى ملئ معلومات استمارة للإنخراط في المدرسة</p>
+      <?php
           if (isset($_GET['error'])) {
             if ($_GET['error'] == "first") {
-              echo '<p class="error">اسم غير صالح اعد كتابته </p>';
+              echo '<p class="error">يجب ان يحتوي الإسم على الحروف العربية فقط يرجى ادخال اسم من جديد </p>';
             } else if ($_GET['error'] == "last") {
-              echo '<p class="error">القب  غير صالح اعد كتابته</p>';
+              echo '<p class="error">يجب ان يحتوي القب على الحروف العربية فقط يرجى ادخال اسم من جديد</p>';
             } else if ($_GET['error'] == "mail") {
-              echo '<p class="error"البريد الإلكتروني غير صالح اعد كتابته</p>';
+              echo '<p class="error">البريد الإلكتروني غير صالح يرجى إعادة  كتابته</p>';
             } else if ($_GET['error'] == "pwd") {
-              echo '<p class="error">اعد كتابة كلمة المرور </p>';
+              echo '<p class="error">  يرجى إعادة كتابة كلمة المرور في خانة التأكيد   </p>';
             } else if ($_GET['error'] == "mail_exist") {
-              echo '<p class="error">هذا البريد الإلكتروني مستعمل </p>';
+              echo '<p class="error">هذا البريد الإلكتروني مستعمل يرجى التسجيل ببريد اخران أمكن </p>';
             } else if ($_GET['error'] == "sql1") {
               echo '<p class="error">SQL ERROR 1</p>';
             } else if ($_GET['error'] == "sql2") {
               echo '<p class="error">SQL ERROR 2</p>';
-            }else if ($_GET['error'] == "none") {
+            } else if ($_GET['error'] == "none") {
               echo '<p class="error">يرجى اختيار استاذ في حقل الإختيار </p>';
-            }else if ($_GET['error'] == "gender") {
+            } else if ($_GET['error'] == "gender") {
               echo '<p class="error">يرجى اختيار الجنس </p>';
             }
-        }
+          }
           ?>
-          <div>
+      <div class="content">
+        <div class="center">
+          
+          <div class="info">
             <?php
             if (isset($_GET['first_name'])) {
               $first_name = $_GET['first_name'];
@@ -56,13 +59,12 @@
             }
             echo '<input type="text" name="first_name" required autocomplete="off" value="' . $first_name . '"/>';
             ?>
-
-            <label >
+            <label>
               <span>الإسم</span>
             </label>
           </div>
 
-          <div>
+          <div class="info">
             <?php
             if (isset($_GET['last_name'])) {
               $last_name = $_GET['last_name'];
@@ -71,48 +73,48 @@
             }
             echo '<input type="text" name="last_name" required autocomplete="off" value="' . $last_name . '"/>';
             ?>
-
-            <label >
+            <label>
               <span>القب</span>
             </label>
           </div>
-        </div>
-        <div class="gender">
-          <p class="p2"> الجنس :</p>
-          <input type="radio" id="male" name="gender" required value="ذكر">
-          <label for="male">ذكر</label>
-          <input type="radio" id="female" name="gender" required value="انثى">
-          <label for="female">انثى</label>
-        </div>
+          <div class="gender">
+            <p class="p2"> الجنس :</p>
+            <input type="radio" id="male" name="gender" required value="ذكر">
+            <label for="male">ذكر</label>
+            <input type="radio" id="female" name="gender" required value="انثى">
+            <label for="female">انثى</label>
+          </div>
+            <div class="info">
+               <?php
+               if (isset($_GET['location'])) {
+                 $location = $_GET['location'];
+               } else {
+                 $location = "";
+               }
+               echo '<input type="text" name="location" required autocomplete="off" value="' . $location . '" />';
+               ?> 
+               <label>
+                 <span>العنوان</span>
+               </label>
+            </div>
+            <div class="info">
+               <?php
+               if (isset($_GET['date'])) {
+                 $date = $_GET['date'];
+               } else {
+                 $date = "";
+               }
+               echo '<input  type="date" name="date" required autocomplete="off" value="' . $date . '" />';
+               ?>
+               <label>
+                 <span>تاريخ الميلاد</span>
+               </label>
+            </div>
+           </div>
+           
         <div class="center">
-          <div>
-            <?php
-            if (isset($_GET['location'])) {
-              $location = $_GET['location'];
-            } else {
-              $location = "";
-            }
-            echo '<input type="text" name="location" required autocomplete="off" value="' . $location . '" />';
-            ?>
-
-            <label >
-              <span>العنوان</span>
-            </label>
-          </div>
-          <div>
-            <?php
-            if (isset($_GET['date'])) {
-              $date = $_GET['date'];
-            } else {
-              $date = "";
-            }
-            echo '<input  type="date" name="date" required autocomplete="off" value="' . $date . '" />';
-            ?>
-            <label >
-              <span>تاريخ الميلاد</span>
-            </label>
-          </div>
-          <div>
+          
+          <div class="info">
             <?php
             if (isset($_GET['tel'])) {
               $tel = $_GET['tel'];
@@ -121,11 +123,11 @@
             }
             echo '<input  type="text" name="tel" required autocomplete="off" value="' . $tel . '" />';
             ?>
-            <label >
+            <label>
               <span>رقم الهاتف</span>
             </label>
           </div>
-          <div>
+          <div class="info">
             <?php
             if (isset($_GET['mail'])) {
               $mail = $_GET['mail'];
@@ -134,32 +136,32 @@
             }
             echo '<input type="mail" name="mail" required autocomplete="off" value="' . $mail . '"/>';
             ?>
-            
-            <label >
+
+            <label>
               <span>البريد الإلكتروني</span>
             </label>
           </div>
-
-          <div>
+          <div class="info">
             <input type="password" name="pwd" required autocomplete="off" />
             <label>
               <span>كلمة السر</span>
             </label>
           </div>
-          <div>
+          <div class="info">
             <input type="password" name="pwd_repeat" required autocomplete="off" />
             <label>
-              <span>إعادة كتابة كلمة السر</span>
+              <span>تأكيد كلمة السر (أعد كتابة كلمة السر ) </span>
             </label>
           </div>
         </div>
-        <p class="p2"> يرجى تحديد المواد التي ترغب في دراستها</p> <br>
+      </div>
+        <p class="p2"> يرجى تحديد الأستاذ الذي ترغب في الدراسة عنده</p> <br>
 
         <div>
-          <select class="model" name="class" required >
+          <select class="model" name="class" required>
             <option value="none"></option>
             <option value="1"> الشيخ محمد الأزهر</option>
-            <option value="2">الشيخ حسن رحموني  </option>
+            <option value="2">الشيخ حسن رحموني </option>
             <option value="3"> الأستاذ مراد الفقي</option>
             <option value="4"> المعلمة مريم قدوري </option>
           </select>

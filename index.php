@@ -28,10 +28,9 @@
       } else {
         echo
         "
-          
-        <a href='signup.php'>تسجيل حساب جديد</a> 
+        <a href='index.php'>الصفحة الرئيسية</a>
         <a href='signin.php'>تسجيل الدخول</a>
-          <a href='index.php'>الصفحة الرئيسية</a>";
+        <a href='signup.php'>تسجيل حساب جديد</a> ";
       }
       ?>
     </div>
