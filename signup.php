@@ -77,12 +77,35 @@
               <span>القب</span>
             </label>
           </div>
+
           <div class="gender">
             <p class="p2"> الجنس :</p>
-            <input type="radio" id="male" name="gender" required value="ذكر">
-            <label for="male">ذكر</label>
-            <input type="radio" id="female" name="gender" required value="انثى">
-            <label for="female">انثى</label>
+            <?php
+            if (isset($_GET['gender'])) {
+              if($_GET['gender'] == "ذكر"){
+              echo "
+                <input type='radio' id='male' name='gender' required value='ذكر' checked>
+                <label for='male'>ذكر</label>
+                <input type='radio' id='female' name='gender' required value='انثى'>
+                <label for='female'>انثى</label>
+              ";
+              } else {
+                echo "
+                <input type='radio' id='male' name='gender' required value='ذكر' >
+                <label for='male'>ذكر</label>
+                <input type='radio' id='female' name='gender' required value='انثى' checked>
+                <label for='female'>انثى</label>
+              ";
+              }
+            } else {
+              echo "
+                <input type='radio' id='male' name='gender' required value='ذكر'>
+                <label for='male'>ذكر</label>
+                <input type='radio' id='female' name='gender' required value='انثى'>
+                <label for='female'>انثى</label>
+              ";
+            }
+            ?>
           </div>
             <div class="info">
                <?php
@@ -159,7 +182,7 @@
 
         <div>
           <select class="model" name="class" required>
-            <option value="none"></option>
+            <option value="none"  >  </option>
             <option value="1"> الشيخ محمد الأزهر</option>
             <option value="2">الشيخ حسن رحموني </option>
             <option value="3"> الأستاذ مراد الفقي</option>
