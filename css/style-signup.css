@@ -141,7 +141,7 @@ form {
   bottom: 0px;
   left: -6px;
   pointer-events: none;
-  border-bottom: 3px solid rgb(223, 30, 30);
+  border-bottom: 3px solid rgb(30 170 223);
 }
 
 .center .info label::after {

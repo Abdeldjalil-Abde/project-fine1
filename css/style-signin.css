@@ -128,7 +128,7 @@ form div label {
   bottom: 0px;
   left: 0px;
   pointer-events: none;
-  border-bottom: 3px solid rgb(223, 30, 30);
+  border-bottom: 3px solid rgb(30 170 223);
 }
 
 form div label::after {

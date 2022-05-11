@@ -24,7 +24,7 @@ if (mysqli_stmt_prepare($stmt, $sql)) {
         header("Location: ../html/list-activation.php?error=sql2");
         exit();
     }
-    $sql = "INSERT INTO  student (first_name, last_name,  gender, location,  dat, tel, mail, pwd, hizb, id_class ) VALUES ('$first', '$last','$gender','$location','$dat', '$tel', '$mail', '$pwd', 0, '$id_class');";
+    $sql = "INSERT INTO  student (first_name, last_name,  gender, location,  dat, tel, mail, pwd, hizb, id_class, status ) VALUES ('$first', '$last','$gender','$location','$dat', '$tel', '$mail', '$pwd', 0, '$id_class', 0);";
     $stmt = mysqli_stmt_init($conn);
     if (mysqli_stmt_prepare($stmt, $sql)) {
         mysqli_stmt_execute($stmt);

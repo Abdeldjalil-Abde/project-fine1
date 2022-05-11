@@ -87,7 +87,6 @@
     </div>
   </footer>
   <script src="js/confirm.js"> </script>
-
 </body>
 
 </html>
