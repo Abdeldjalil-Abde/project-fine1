@@ -48,16 +48,21 @@
       }
     ?>
     <div  class="content">
-       <div class="Accessories Register">
-        <a href="signup.php">التسجيل في الدورة</a>
+      <?php
+    if (!isset($_SESSION['first_name'])) {
+        echo "
+        <div class='Accessories Register'>
+        <a href='signup.php'>التسجيل في الدورة</a>
+      </div>";
+      }
+      ?>
+      <div class="Accessories">
+        <a href="https://alnawawiforty.com/" >الأربعون النووية  </a>
+        <a href="https://mawdoo3.com/%D8%A7%D8%B0%D9%83%D8%A7%D8%B1_%D8%A7%D9%84%D8%B5%D8%A8%D8%A7%D8%AD_%D9%88%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%A1_%D8%AD%D8%B5%D9%86_%D8%A7%D9%84%D9%85%D8%B3%D9%84%D9%85"> حصن المسلم</a>
       </div>
       <div class="Accessories">
-        <a href="" > أحاديث نبوية  </a>
-        <a href="Accessories/supplement1.php"> حصن المسلم</a>
-      </div>
-      <div class="Accessories">
-        <a href="Accessories/supplement2.php"> احكام التجويد</a>
-        <a href="">الفقه</a>
+        <a href="https://mawdoo3.com/%D8%A3%D8%AD%D9%83%D8%A7%D9%85_%D8%A7%D9%84%D8%AA%D8%AC%D9%88%D9%8A%D8%AF_%D9%83%D8%A7%D9%85%D9%84%D8%A9#.D9.85.D8.AE.D8.A7.D8.B1.D8.AC_.D8.A7.D9.84.D8.AD.D8.B1.D9.88.D9.81"> احكام التجويد</a>
+        <a href="https://mawdoo3.com/%D8%AA%D8%B9%D8%B1%D9%8A%D9%81_%D8%A7%D9%84%D9%81%D9%82%D9%87_%D9%84%D8%BA%D8%A9_%D9%88%D8%A7%D8%B5%D8%B7%D9%84%D8%A7%D8%AD%D8%A7%D9%8B">الفقه</a>
       </div>
     </div>
   </section>
