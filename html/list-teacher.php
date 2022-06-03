@@ -12,7 +12,7 @@ if(!isset($_SESSION['first_name'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>قائمة الطلبة </title>
     <link rel="stylesheet" href="../css/style-header.css">
-    <link rel="stylesheet" href="../css/style-liste-student.css">
+    <link rel="stylesheet" href="../css/style-list-student.css">
 </head>
 
 <body>

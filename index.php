@@ -52,11 +52,11 @@
         <a href="signup.php">التسجيل في الدورة</a>
       </div>
       <div class="Accessories">
-        <a href="" > تفسير القران </a>
+        <a href="" > أحاديث نبوية  </a>
         <a href="Accessories/supplement1.php"> حصن المسلم</a>
       </div>
       <div class="Accessories">
-        <a href=""> احكام التجويد</a>
+        <a href="Accessories/supplement2.php"> احكام التجويد</a>
         <a href="">الفقه</a>
       </div>
     </div>
@@ -82,8 +82,8 @@
     </div>
 
     <div class="info">
-      Copyright &#169; 2021-2022 focus Technology <br />
-      All Rights Reserved
+    حقوق التأليف والنشر &#169; 2021-2022  <br />
+      كل الحقوق محفوظة
     </div>
   </footer>
   <script src="js/confirm.js"> </script>

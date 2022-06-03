@@ -5,15 +5,15 @@
 
 header {
   background-image: url(../imaj/IMG.jpg);
-  width: 100vw;
+  width: 98.75vw;
   min-height: 100vh;
   padding-bottom: 5%;
   background-size: cover;
   display: flex;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
 }
-
 .container {
   display: flex;
   width: 100vw;

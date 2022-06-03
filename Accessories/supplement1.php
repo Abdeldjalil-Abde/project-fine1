@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php session_start(); ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -112,6 +113,31 @@
             </ul>
         </div>
     </main>
+    <footer>
+    <div class="links">
+      <div class="links-container">
+        <h3>معلومات الإتصال </h3>
+        <a href="">QuranicSchool@gmail.com</a>
+        <a href="">+213687654321</a>
+        <a href="">+213756781234</a>
+      </div>
+      <div class="links-container">
+        <h3> مواقع التواصل </h3>
+        <a href="">Facebook</a>
+        <a href="">Instagram</a>
+        <a href="">YouTube</a>
+      </div>
+      <div class="links-container">
+        <h3>العنوان </h3>
+        <a href="https://goo.gl/maps/QGHyfpjcP72wm6Di6">M7F2+XP الجلفة</a>
+      </div>
+    </div>
+
+    <div class="info">
+    حقوق التأليف والنشر &#169; 2021-2022  <br />
+      كل الحقوق محفوظة
+    </div>
+  </footer>
 </body>
 
 </html>

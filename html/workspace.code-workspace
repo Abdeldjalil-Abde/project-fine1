@@ -4,10 +4,16 @@
 			"path": ".."
 		},
 		{
-			"path": "..\\..\\..\\..\\..\\project in Visual Studio Code\\IHM-TD-Project"
+			"path": "..\\..\\..\\..\\..\\project in Visual Studio Code\\radio-button"
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\project in Visual Studio Code\\Expert-System\\AI-Expert-System-main"
+		},
+		{
+			"path": "c:\\Users\\Abdeldjalil Tedjini\\Downloads\\AI-Expert-System"
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "IHM-TD-Project"
+		"liveServer.settings.multiRootWorkspaceName": "AI-Expert-System"
 	}
 }
