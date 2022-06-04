@@ -77,7 +77,7 @@ if (!isset($_SESSION['first_name'])) {
           <?php echo "<span class='info'>" . $_SESSION['gender'] . "</span>"; ?>
         </div>
         <div>
-          <span>رقم الهاتف (المعني /الولي) : </span>
+          <span>رقم الهاتف : </span>
           <?php echo "<span class='info'>" . $_SESSION['tel'] . "</span>"; ?>
         </div>
         <div>

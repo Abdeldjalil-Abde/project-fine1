@@ -32,9 +32,10 @@ $(".active").on("click", function (e) {
   e.preventDefault();
 
   $(".ok").css({
-    display: "none",
+    display: "none"
   });
   $(".background").css({
     background: "none",
+    display: "none"
   });
 });

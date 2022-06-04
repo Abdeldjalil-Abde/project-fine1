@@ -35,7 +35,7 @@
             } else if ($_GET['error'] == "pwd") {
               echo '<p class="error">  يرجى إعادة كتابة كلمة المرور في خانة التأكيد   </p>';
             } else if ($_GET['error'] == "mail_exist") {
-              echo '<p class="error">هذا البريد الإلكتروني مستعمل يرجى التسجيل ببريد اخران أمكن </p>';
+              echo '<p class="error">هذا البريد الإلكتروني مستعمل يرجى التسجيل ببريد اخر إن أمكن </p>';
             } else if ($_GET['error'] == "sql1") {
               echo '<p class="error">SQL ERROR 1</p>';
             } else if ($_GET['error'] == "sql2") {
